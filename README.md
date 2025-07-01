@@ -57,3 +57,90 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Code Quality and Formatting
+
+This project is configured with comprehensive code quality and formatting tools to ensure consistent code style and catch potential issues early.
+
+### Available Scripts
+
+#### Linting (Code Quality Analysis)
+
+```bash
+# Run all linting checks (TypeScript + SCSS)
+npm run lint:all
+
+# Lint TypeScript and Angular template files only
+npm run lint
+
+# Lint SCSS/CSS files only
+npm run lint:styles
+
+# Auto-fix SCSS linting issues where possible
+npm run lint:styles:fix
+```
+
+#### Code Formatting
+
+```bash
+# Format all files (TypeScript, HTML, SCSS)
+npm run format
+
+# Check if files are properly formatted (without changing them)
+npm run format:check
+
+# Auto-fix all possible issues (SCSS lint + formatting)
+npm run fix:all
+```
+
+### Configured Tools
+
+#### ESLint
+
+- **Purpose**: TypeScript and Angular template code quality analysis
+- **Files**: `*.ts`, `*.html`
+- **Config**: `eslint.config.js`
+- **Rules**: Angular ESLint recommended + TypeScript ESLint + Prettier integration
+
+#### Stylelint
+
+- **Purpose**: SCSS/CSS code quality and style consistency
+- **Files**: `*.scss`, `*.css`
+- **Config**: `.stylelintrc`
+- **Rules**: Standard SCSS configuration with custom indentation rules
+
+#### Prettier
+
+- **Purpose**: Code formatting for consistent style
+- **Files**: `*.ts`, `*.html`, `*.scss`, `*.json`
+- **Config**: `.prettierrc`
+- **Integration**: Automatically formats on save (VS Code)
+
+### Configuration Files
+
+| Tool      | Configuration File | Location                |
+| --------- | ------------------ | ----------------------- |
+| ESLint    | `eslint.config.js` | Root directory          |
+| Stylelint | `.stylelintrc`     | Root directory          |
+| Prettier  | `.prettierrc`      | Root directory          |
+| VS Code   | `settings.json`    | `.vscode/settings.json` |
+
+### IDE Integration
+
+The project includes VS Code settings (`.vscode/settings.json`) that:
+
+- Enable format on save
+- Set Prettier as the default formatter
+- Ensure consistent development experience across team members
+
+### Pre-commit Workflow Recommendation
+
+For the best development experience, run these commands before committing:
+
+```bash
+# Check everything is properly formatted and passes quality checks
+npm run format:check && npm run lint:all
+
+# Or auto-fix most issues and then check
+npm run fix:all && npm run lint:all
+```

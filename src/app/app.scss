@@ -1,0 +1,196 @@
+// Import modern SCSS functions
+@use "sass:color";
+
+// Global application styles
+:host {
+  display: block;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+// Variable definitions
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$danger-color: #dc3545;
+$warning-color: #ffc107;
+$info-color: #17a2b8;
+
+// Mixins
+@mixin button-variant($bg-color, $text-color: #fff) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: 1px solid $bg-color;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    background-color: color.adjust($bg-color, $lightness: -10%);
+    border-color: color.adjust($bg-color, $lightness: -10%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($bg-color, 0.25);
+  }
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+}
+
+// Nested styles example
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+
+  .header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h1 {
+      color: $primary-color;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: $secondary-color;
+      font-size: 1.1rem;
+    }
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+
+    .card {
+      background: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 7.5%);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+      }
+
+      .card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: $primary-color;
+      }
+
+      .card-text {
+        color: $secondary-color;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+// Button styles
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+
+  &.btn-primary {
+    @include button-variant($primary-color);
+  }
+
+  &.btn-secondary {
+    @include button-variant($secondary-color);
+  }
+
+  &.btn-success {
+    @include button-variant($success-color);
+  }
+
+  &.btn-danger {
+    @include button-variant($danger-color);
+  }
+}
+
+// Responsive design
+@media (width <= 768px) {
+  .container {
+    padding: 0.5rem;
+
+    .header {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .content {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+
+      .card {
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+// Utility classes
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-5 {
+  margin-bottom: 3rem;
+}
