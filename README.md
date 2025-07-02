@@ -1,6 +1,24 @@
 # BuhlProbe
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
+A modern Angular application with responsive design and multi-language internationalization support.
+
+## Responsive Design Features
+
+This application implements a complete responsive design system based on design specifications provided by UX/UI designers, supporting the following breakpoints:
+
+- **Mobile S (320px)**: Small mobile devices
+- **Mobile M (390px)**: Medium mobile devices  
+- **Tablet (768px)**: Tablet devices
+- **Desktop (1200px)**: Desktop devices
+- **Desktop L (1980px)**: Large desktop devices
+
+For detailed responsive design documentation, please see: [RESPONSIVE_DESIGN.md](./RESPONSIVE_DESIGN.md)
+
+## Internationalization Support
+
+The application supports multi-language switching:
+- English (en)
+- German (de)
 
 ## Development server
 

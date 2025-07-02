@@ -1,0 +1,10 @@
+<svg id="ic-buchhaltung" xmlns="http://www.w3.org/2000/svg" width="106" height="100" viewBox="0 0 106 100">
+  <g id="Gruppe_21563" data-name="Gruppe 21563" transform="translate(10)">
+    <g id="Rechteck_18039" data-name="Rechteck 18039" fill="#63c2cd" stroke="#707070" stroke-width="1" opacity="0">
+      <rect width="86" height="86" stroke="none"/>
+      <rect x="0.5" y="0.5" width="85" height="85" fill="none"/>
+    </g>
+    <path id="icons8-profiles" d="M10.172,1A7.191,7.191,0,0,0,3,8.168V58.345h7.172V8.168H53.2V1ZM24.515,15.336A7.191,7.191,0,0,0,17.343,22.5V72.681a7.191,7.191,0,0,0,7.172,7.168H46.029V72.681H24.515V22.5H63.958V47.593h7.172V22.5a7.168,7.168,0,0,0-7.172-7.168ZM40.65,26.088a5.376,5.376,0,1,0,5.379,5.376A5.377,5.377,0,0,0,40.65,26.088Zm0,14.336c-2.991,0-8.964,1.5-8.964,4.48v2.688H49.615V44.9C49.615,41.926,43.641,40.425,40.65,40.425ZM53.2,54.761v7.168H78.3V54.761Zm0,10.752v7.168H78.3V65.513Zm0,10.752v7.168H78.3V76.265Z" transform="translate(4.133 2.566)" fill="#63c2cd"/>
+  </g>
+  <path id="Pfad_3523" data-name="Pfad 3523" d="M68.5-3.168c29.271,0,37.5,14.275,37.5,29.12s-23.729,26.88-53,26.88S0,40.8,0,25.952,39.229-3.168,68.5-3.168Z" transform="translate(0 47.168)" fill="#63c2cd" opacity="0.1"/>
+</svg>

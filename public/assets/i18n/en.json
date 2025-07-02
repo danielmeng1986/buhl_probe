@@ -1,0 +1,63 @@
+{
+  "APP.TITLE": "Buhl Probe",
+  "APP.WELCOME": "Welcome",
+  "APP.LANGUAGE": "Language",
+  
+  "HEADER.HOME": "Home",
+  "HEADER.PRODUCTS": "Products",
+  "HEADER.ABOUT": "About",
+  "HEADER.CONTACT": "Contact",
+  
+  "FOOTER.COPYRIGHT": "© 2025 Buhl Probe. All rights reserved.",
+  "FOOTER.PRIVACY": "Privacy Policy",
+  "FOOTER.TERMS": "Terms of Service",
+  
+  "PRODUCT.TITLE": "Products",
+  "PRODUCT.DETAILS": "Product Details",
+  "PRODUCT.PRICE": "Price",
+  "PRODUCT.DESCRIPTION": "Description",
+  "PRODUCT.ADD_TO_CART": "Add to Cart",
+  "PRODUCT.BUY_NOW": "Buy Now",
+  "PRODUCT.OUT_OF_STOCK": "Out of Stock",
+  "PRODUCT.SELECT_PRODUCT": "Please select a product to view details",
+  "PRODUCT.NO_PRODUCTS_AVAILABLE": "No products available",
+  
+  "PRODUCT.SMARTPHONE.NAME": "Smartphone",
+  "PRODUCT.SMARTPHONE.DESCRIPTION": "Latest smartphone with powerful performance and excellent camera",
+  
+  "PRODUCT.WIRELESS_HEADPHONES.NAME": "Wireless Headphones",
+  "PRODUCT.WIRELESS_HEADPHONES.DESCRIPTION": "High-quality wireless headphones with noise cancellation",
+  
+  "PRODUCT.LAPTOP.NAME": "Laptop",
+  "PRODUCT.LAPTOP.DESCRIPTION": "Lightweight and portable laptop, perfect for work and study",
+  
+  "PRODUCT.SMARTWATCH.NAME": "Smart Watch",
+  "PRODUCT.SMARTWATCH.DESCRIPTION": "Multi-functional smart watch with health monitoring and fitness tracking",
+  
+  "PRODUCT.MY_OFFICE.NAME": "My Office",
+  
+  "PRODUCT.CATEGORY.ELECTRONICS": "Electronics",
+  
+  "HOME.HERO_TITLE": "Modern Business Solutions",
+  "HOME.HERO_SUBTITLE": "Discover innovative tools and services designed to transform your business operations and drive growth.",
+  "HOME.LEARN_MORE": "Learn More",
+  "HOME.FEATURED_PRODUCTS": "Featured Products",
+  "HOME.FEATURED_SUBTITLE": "Explore our most popular business solutions",
+  "HOME.WHY_CHOOSE_US": "Why Choose Us",
+  "HOME.FEATURE_1_TITLE": "Easy Integration",
+  "HOME.FEATURE_1_DESC": "Seamlessly integrate with your existing systems and workflows",
+  "HOME.FEATURE_2_TITLE": "Scalable Solutions",
+  "HOME.FEATURE_2_DESC": "Grow your business with solutions that scale with your needs",
+  "HOME.FEATURE_3_TITLE": "Expert Support",
+  "HOME.FEATURE_3_DESC": "Get help from our team of experienced professionals",
+  
+  "COMMON.LOADING": "Loading...",
+  "COMMON.ERROR": "An error occurred",
+  "COMMON.RETRY": "Retry",
+  "COMMON.SAVE": "Save",
+  "COMMON.CANCEL": "Cancel",
+  "COMMON.OK": "OK",
+  "COMMON.YES": "Yes",
+  "COMMON.NO": "No",
+  "COMMON.BACK": "Back to Product List"
+}

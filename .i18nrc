@@ -1,0 +1,13 @@
+{
+  "localesPaths": "public/assets/i18n",
+  "pathMatcher": "{locale}.json",
+  "sourceLanguage": "en",
+  "keystyle": "flat",
+  "namespace": false,
+  "enabledFrameworks": [
+    "ngx-translate"
+  ],
+  "extract": {
+    "autoDetect": true
+  }
+}

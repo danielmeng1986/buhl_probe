@@ -1,0 +1,20 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "i18n-ally.localesPaths": ["public/assets/i18n"],
+    "i18n-ally.enabledFrameworks": ["ngx-translate"],
+    "i18n-ally.keystyle": "flat",
+    "i18n-ally.pathMatcher": "{locale}.json"
+  },
+  "extensions": {
+    "recommendations": [
+      "lokalise.i18n-ally",
+      "angular.ng-template",
+      "ms-vscode.vscode-typescript-next"
+    ]
+  }
+}

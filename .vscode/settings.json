@@ -1,0 +1,24 @@
+{
+  // i18n Ally Core Configuration
+  "i18n-ally.localesPaths": ["public/assets/i18n"],
+  "i18n-ally.pathMatcher": "{locale}.json",
+  "i18n-ally.sourceLanguage": "de",
+  "i18n-ally.displayLanguage": "de",
+  "i18n-ally.keystyle": "flat",
+  "i18n-ally.namespace": false,
+  "i18n-ally.enabledFrameworks": ["ngx-translate"],
+  "i18n-ally.enabledParsers": ["json", "ts", "js"],
+  
+  // Detection and Usage
+  "i18n-ally.extract.autoDetect": true,
+  "i18n-ally.regex.key": "([A-Z][A-Z0-9_.]+)",
+  "i18n-ally.regex.usageMatchAppend": [
+    "['\"`]({key})['\"`]"
+  ],
+  
+  // Editor settings
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.json": "jsonc"
+  }
+}
