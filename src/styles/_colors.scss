@@ -1,0 +1,56 @@
+// ===========================
+// COLOR VARIABLES
+// ===========================
+
+// Primary Colors
+$color-white: #FFFFFF;
+$color-light-gray: #F5F7FA;
+$color-primary-orange: #ED751B;
+$color-primary-blue: #023E84;
+$color-dark-gray: #707070;
+$color-yellow: #FFDE12;
+
+// Secondary Colors
+$color-light-blue: #CCEAF1;
+$color-teal: #63C2CD;
+$color-light-teal: #95D2DD;
+$color-red: #E9435C;
+$color-green: #A2C62E;
+$color-orange: #F29213;
+
+// Transparency Colors
+$color-black-overlay-light: #00000029;  // Black with 16% opacity
+$color-black-overlay-lighter: #0000001F;  // Black with 12% opacity
+
+// ===========================
+// SEMANTIC COLOR MAPPINGS
+// ===========================
+
+// Background colors
+$bg-primary: $color-white;
+$bg-secondary: $color-light-gray;
+$bg-overlay: $color-black-overlay-light;
+
+// Text colors
+$text-primary: $color-dark-gray;
+$text-secondary: $color-primary-blue;
+
+// Brand colors
+$brand-primary: $color-primary-orange;
+$brand-secondary: $color-primary-blue;
+$brand-accent: $color-yellow;
+
+// State colors
+$color-success: $color-green;
+$color-warning: $color-yellow;
+$color-error: $color-red;
+$color-info: $color-teal;
+
+// Button colors
+$btn-primary: $color-primary-orange;
+$btn-secondary: $color-primary-blue;
+$btn-accent: $color-yellow;
+
+// Border colors
+$border-light: $color-black-overlay-lighter;
+$border-default: $color-black-overlay-light;

@@ -1,0 +1,88 @@
+// ===========================
+// LOCAL ROBOTO FONT DECLARATIONS
+// ===========================
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/Roboto-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/Roboto-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/Roboto-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/Roboto-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/Roboto-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+// ===========================
+// SIMPLIFIED FONT VARIABLES
+// ===========================
+
+$font-family-primary: "Roboto", sans-serif;
+
+$font-weights: (
+  light: 300,
+  regular: 400,
+  medium: 500,
+  bold: 700,
+  black: 900
+);
+
+// ===========================
+// ROBOTO FONT UTILITY CLASSES
+// ===========================
+// Since this app only uses Roboto, we use complete classes
+// that ensure both font-family and font-weight are correctly applied
+
+.roboto-light {
+  font-family: $font-family-primary;
+  font-weight: map-get($font-weights, light);
+}
+
+.roboto-regular {
+  font-family: $font-family-primary;
+  font-weight: map-get($font-weights, regular);
+}
+
+.roboto-medium {
+  font-family: $font-family-primary;
+  font-weight: map-get($font-weights, medium);
+}
+
+.roboto-bold {
+  font-family: $font-family-primary;
+  font-weight: map-get($font-weights, bold);
+}
+
+.roboto-black {
+  font-family: $font-family-primary;
+  font-weight: map-get($font-weights, black);
+}
