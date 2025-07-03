@@ -11,7 +11,7 @@
   
   // Detection and Usage
   "i18n-ally.extract.autoDetect": true,
-  "i18n-ally.regex.key": "([A-Z][A-Z0-9_.]+)",
+  "i18n-ally.regex.key": "([A-Z][A-Z0-9_]*\\.[A-Z][A-Z0-9_]*(?:\\.[A-Z][A-Z0-9_]*)*)",
   "i18n-ally.regex.usageMatchAppend": [
     "['\"`]({key})['\"`]"
   ],

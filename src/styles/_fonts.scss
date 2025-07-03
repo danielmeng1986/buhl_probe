@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // ===========================
 // LOCAL ROBOTO FONT DECLARATIONS
 // ===========================
@@ -64,25 +66,25 @@ $font-weights: (
 
 .roboto-light {
   font-family: $font-family-primary;
-  font-weight: map-get($font-weights, light);
+  font-weight: map.get($font-weights, light);
 }
 
 .roboto-regular {
   font-family: $font-family-primary;
-  font-weight: map-get($font-weights, regular);
+  font-weight: map.get($font-weights, regular);
 }
 
 .roboto-medium {
   font-family: $font-family-primary;
-  font-weight: map-get($font-weights, medium);
+  font-weight: map.get($font-weights, medium);
 }
 
 .roboto-bold {
   font-family: $font-family-primary;
-  font-weight: map-get($font-weights, bold);
+  font-weight: map.get($font-weights, bold);
 }
 
 .roboto-black {
   font-family: $font-family-primary;
-  font-weight: map-get($font-weights, black);
+  font-weight: map.get($font-weights, black);
 }

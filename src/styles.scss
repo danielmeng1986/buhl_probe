@@ -3,8 +3,8 @@
 @use "sass:map";
 
 // Import configurations
-@import "styles/fonts";
-@import "styles/colors";
+@use "styles/fonts" as *;
+@use "styles/colors" as *;
 
 // Remove Google Fonts import - we're using local fonts now
 

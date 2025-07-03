@@ -1,0 +1,11 @@
+<div class="color-strip">
+    @for (segment of segments; track $index) {
+        <div
+        class="segment"
+        [ngStyle]="{
+            'flex-grow': segment.value,
+            'background-color': segment.color,
+        }"
+        ></div>
+    }
+</div>
