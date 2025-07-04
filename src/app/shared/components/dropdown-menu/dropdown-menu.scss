@@ -1,0 +1,33 @@
+@use "../../../../styles/fonts" as *;
+@use "../../../../styles/colors" as *;
+
+.dropdown-container {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  gap: 1px;
+}
+
+.text-wrapper {
+  color: $color-primary-blue;
+  font-size: 14px;
+  text-align: left;
+  letter-spacing: 0.35px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+}
+
+.icon-wrapper {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+}

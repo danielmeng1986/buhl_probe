@@ -12,17 +12,11 @@
 // RESPONSIVE BREAKPOINTS
 // ===========================
 $breakpoints: (
-  "mobile-s": 320px,
+  "mobile": 320px,
   "mobile-m": 390px,
   "tablet": 768px,
   "desktop": 1200px,
-  "desktop-l": 1980px,
-);
-
-$container-max-widths: (
-  "tablet": 720px,
-  "desktop": 1140px,
-  "desktop-l": 1920px,
+  "desktop-xl": 1980px,
 );
 
 // Media query mixin
@@ -41,7 +35,6 @@ $container-max-widths: (
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: $font-family-primary;
 }
 
 html {
@@ -59,38 +52,50 @@ body {
 }
 
 // ===========================
-// RESPONSIVE CONTAINER SYSTEM
+// RESPONSIVE UTILITY CLASSES
 // ===========================
-.container {
-  width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
+
+// Show/hide elements based on screen size
+.mobile-only {
+  display: block;
 
   @include respond-to("tablet") {
-    max-width: map.get($container-max-widths, "tablet");
-  }
-
-  @include respond-to("desktop") {
-    max-width: map.get($container-max-widths, "desktop");
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  @include respond-to("desktop-l") {
-    max-width: map.get($container-max-widths, "desktop-l");
-    padding-left: 30px;
-    padding-right: 30px;
+    display: none;
   }
 }
 
-// ===========================
-// FONT LOADING OPTIMIZATION
-// ===========================
+.tablet-only {
+  display: none;
 
-// Simple font loading class for better performance
-.font-loaded {
-  font-family: $font-family-primary;
+  @include respond-to("tablet") {
+    display: block;
+  }
+
+  @include respond-to("desktop") {
+    display: none;
+  }
+}
+
+.desktop-only {
+  display: none;
+
+  @include respond-to("desktop") {
+    display: block;
+  }
+}
+
+.mobile-tablet-only {
+  display: block;
+
+  @include respond-to("desktop") {
+    display: none;
+  }
+}
+
+.tablet-desktop-only {
+  display: none;
+
+  @include respond-to("tablet") {
+    display: block;
+  }
 }

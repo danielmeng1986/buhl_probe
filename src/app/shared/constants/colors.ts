@@ -21,8 +21,8 @@ export const COLORS = {
   ORANGE: '#F29213',
 
   // Transparency Colors
-  BLACK_OVERLAY_LIGHT: '#00000029',  // Black with 16% opacity
-  BLACK_OVERLAY_LIGHTER: '#0000001F',  // Black with 12% opacity
+  BLACK_OVERLAY_LIGHT: '#00000029', // Black with 16% opacity
+  BLACK_OVERLAY_LIGHTER: '#0000001F', // Black with 12% opacity
 } as const;
 
 // Semantic color mappings

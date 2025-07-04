@@ -6,8 +6,8 @@ import { MyTax } from './pages/my-tax/my-tax';
 
 export const routes: Routes = [
   { path: '', component: Home },
-  { path: 'my-office', component: MyOffice},
-  { path: 'my-club', component: MyClub},
-  { path: 'my-tax', component: MyTax},
+  { path: 'my-office', component: MyOffice },
+  { path: 'my-club', component: MyClub },
+  { path: 'my-tax', component: MyTax },
   { path: '**', redirectTo: '/' },
 ];

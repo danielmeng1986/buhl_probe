@@ -1,0 +1,71 @@
+@use "../../../../styles/colors" as *;
+
+.icon-button-container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+
+  &.medium {
+    height: 36px;
+    border-radius: 18px;
+  }
+
+  &.large {
+    height: 48px;
+    border-radius: 24px;
+  }
+
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .text-wrapper {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-transform: uppercase;
+    height: 100%;
+
+    &.medium {
+      font-size: 14px;
+      text-align: left;
+      letter-spacing: 0.7px;
+      line-height: 19px;
+      justify-content: flex-start;
+      margin-left: 8px;
+      margin-right: 16px;
+    }
+
+    &.large {
+      font-size: 21px;
+      text-align: center;
+      letter-spacing: 1.44px;
+      line-height: 21px;
+      justify-content: center;
+    }
+  }
+
+  //
+  &.medium .icon-wrapper {
+    width: 24px;
+    height: 24px;
+    margin-left: 12px;
+    // border-radius: 18px 0 0 18px; // 只设置左侧圆角
+  }
+
+  // 为 large 大小设置图标包装器尺寸
+  &.large .icon-wrapper {
+    width: 48px;
+    height: 48px;
+    // border-radius: 24px 0 0 24px; // 只设置左侧圆角
+    padding-left: 16px;
+  }
+}

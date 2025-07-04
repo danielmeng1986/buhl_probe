@@ -5,13 +5,8 @@ import { ProductList } from '../../components/product-list/product-list';
 
 @Component({
   selector: 'app-home',
-  imports: [
-    CommonModule,
-    TranslateModule,
-    ProductList,
-  ],
+  imports: [CommonModule, TranslateModule, ProductList],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {
-}
+export class Home {}

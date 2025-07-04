@@ -1,14 +1,22 @@
 <div class="product-list-container">
-  <div class="products-grid responsive-grid" *ngIf="products.length > 0">
-    <app-product-card *ngFor="let product of products; trackBy: trackByProductId" [product]="product">
+  @if (products.length > 0) {
+  <div class="products-grid responsive-grid">
+    @for (product of products; track trackByProductId($index, product)) {
+    <app-product-card [product]="product">
     </app-product-card>
+    }
   </div>
+  }
 
-  <div class="loading" *ngIf="isLoading">
+  @if (isLoading) {
+  <div class="loading">
     <p>{{ "COMMON.LOADING" | translate }}</p>
   </div>
+  }
 
-  <div class="empty-state" *ngIf="!isLoading && products.length === 0">
+  @if (!isLoading && products.length === 0) {
+  <div class="empty-state">
     <p>{{ "PRODUCT.NO_PRODUCTS_AVAILABLE" | translate }}</p>
   </div>
+  }
 </div>

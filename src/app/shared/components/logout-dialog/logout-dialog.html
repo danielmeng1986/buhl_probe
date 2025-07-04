@@ -1,0 +1,35 @@
+<div
+  class="logout-dialog-overlay"
+  (click)="onCancel()"
+  (keydown.escape)="onCancel()"
+  tabindex="0"
+>
+  <div
+    class="logout-dialog"
+    (click)="$event.stopPropagation()"
+    (keydown.enter)="$event.stopPropagation()"
+    role="dialog"
+    aria-modal="true"
+    tabindex="0"
+  >
+    <div class="dialog-header">
+      <h2>{{ "LOGOUT.TITLE" | translate }}</h2>
+      <button class="close-button" (click)="onCancel()" type="button">
+        &times;
+      </button>
+    </div>
+
+    <div class="dialog-content">
+      <p>{{ "LOGOUT.CONFIRMATION_MESSAGE" | translate }}</p>
+    </div>
+
+    <div class="dialog-actions">
+      <button type="button" class="button secondary" (click)="onCancel()">
+        {{ "LOGOUT.CANCEL" | translate }}
+      </button>
+      <button type="button" class="button primary" (click)="onConfirm()">
+        {{ "LOGOUT.CONFIRM" | translate }}
+      </button>
+    </div>
+  </div>
+</div>

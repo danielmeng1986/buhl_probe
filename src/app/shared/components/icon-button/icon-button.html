@@ -1,0 +1,16 @@
+<div
+  class="icon-button-container"
+  [ngClass]="size"
+  [ngStyle]="{
+    'background-color': bgColorValue,
+  }"
+>
+  @if (icon) {
+    <div class="icon-wrapper">
+      <img [src]="iconPath" [alt]="icon" class="icon" />
+    </div>
+  }
+  <div class="text-wrapper roboto-medium" [ngClass]="size">
+    <ng-content></ng-content>
+  </div>
+</div>

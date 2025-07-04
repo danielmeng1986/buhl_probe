@@ -7,6 +7,17 @@
   "HEADER.PRODUCTS": "Products",
   "HEADER.ABOUT": "About",
   "HEADER.CONTACT": "Contact",
+  "HEADER.ALL_PRODUCTS": "All Products",
+  "HEADER.PRODUCTS_FINDER": "Product Finder",
+  "HEADER.RECOMMENDATIONS": "Recommendations",
+  "HEADER.TEST_VERSIONS": "Test Versions",
+  "HEADER.MENU": "Menu",
+  "HEADER.SEARCH": "Search",
+  "HEADER.APPS": "Apps",
+  "HEADER.CUSTOMER_CENTER": "Customer Center",
+  "HEADER.SHOPPING_CART": "Shopping Cart",
+  "HEADER.LOGIN": "Login",
+  "HEADER.LOGOUT": "Logout",
   
   "FOOTER.COPYRIGHT": "© 2025 Buhl Probe. All rights reserved.",
   "FOOTER.PRIVACY": "Privacy Policy",
@@ -59,5 +70,22 @@
   "COMMON.OK": "OK",
   "COMMON.YES": "Yes",
   "COMMON.NO": "No",
-  "COMMON.BACK": "Back to Product List"
+  "COMMON.BACK": "Back to Product List",
+  
+  "LOGIN.TITLE": "Login",
+  "LOGIN.USERNAME": "Username",
+  "LOGIN.PASSWORD": "Password",
+  "LOGIN.USERNAME_PLACEHOLDER": "Enter your username",
+  "LOGIN.PASSWORD_PLACEHOLDER": "Enter your password",
+  "LOGIN.USERNAME_REQUIRED": "Username is required",
+  "LOGIN.PASSWORD_REQUIRED": "Password is required",
+  "LOGIN.ERROR_INVALID_CREDENTIALS": "Invalid username or password",
+  "LOGIN.LOGIN": "Login",
+  "LOGIN.CANCEL": "Cancel",
+  "LOGIN.LOGGING_IN": "Logging in...",
+  
+  "LOGOUT.TITLE": "Logout",
+  "LOGOUT.CONFIRMATION_MESSAGE": "Are you sure you want to logout?",
+  "LOGOUT.CONFIRM": "Logout",
+  "LOGOUT.CANCEL": "Cancel"
 }

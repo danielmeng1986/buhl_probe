@@ -22,21 +22,21 @@ export class ProductService {
       nameId: 'PRODUCT.MY_OFFICE.NAME',
       descriptionId: 'PRODUCT.MY_OFFICE.DESCRIPTION',
       imageUrl: 'assets/pngs/Gruppe 22024.png',
-      routerLink: '/my-office'
+      routerLink: '/my-office',
     },
     {
       id: 2,
       nameId: 'PRODUCT.MY_CLUB.NAME',
       descriptionId: 'PRODUCT.MY_CLUB.DESCRIPTION',
       imageUrl: 'assets/pngs/Gruppe 22024.png',
-      routerLink: '/my-club'
+      routerLink: '/my-club',
     },
     {
       id: 3,
       nameId: 'PRODUCT.TAX.NAME',
       descriptionId: 'PRODUCT.TAX.DESCRIPTION',
       imageUrl: 'assets/pngs/Gruppe 22024.png',
-      routerLink: '/my-tax'
+      routerLink: '/my-tax',
     },
   ];
 
