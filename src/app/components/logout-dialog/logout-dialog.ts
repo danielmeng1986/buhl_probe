@@ -1,6 +1,6 @@
 import { Component, inject, output } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { Auth } from '../../../services';
+import { AuthService } from '../../services';
 
 @Component({
   selector: 'app-logout-dialog',
@@ -13,7 +13,7 @@ export class LogoutDialog {
   dialogClose = output<void>();
   logoutSuccess = output<void>();
 
-  private readonly authService = inject(Auth);
+  private readonly authService: AuthService = inject(AuthService);
 
   onConfirm(): void {
     this.authService.logout();

@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
-import { LanguageService, UserSyncService, Auth } from './services';
+import { LanguageService, UserSyncService, AuthService } from './services';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -17,7 +17,7 @@ export class App implements OnInit {
   private languageService = inject(LanguageService);
   private translateService = inject(TranslateService);
   private userSyncService = inject(UserSyncService); // Auto-sync user info every 10s when authenticated
-  private authService = inject(Auth); // Add Auth service
+  private authService: AuthService = inject(AuthService); // Add Auth service
 
   ngOnInit(): void {
     // UserSyncService auto-starts when injected - it will automatically sync user info every 10s after login

@@ -11,9 +11,9 @@ import {
   IconButton,
   IconButtonSize,
 } from '../../shared/components/icon-button/icon-button';
-import { LoginDialog } from '../../shared/components/login-dialog/login-dialog';
-import { LogoutDialog } from '../../shared/components/logout-dialog/logout-dialog';
-import { Auth } from '../../services';
+import { LoginDialog } from '../login-dialog/login-dialog';
+import { LogoutDialog } from '../logout-dialog/logout-dialog';
+import { AuthService } from '../../services';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
@@ -41,7 +41,7 @@ export class Header {
   readonly iconButtonSize: IconButtonSize = 'medium';
   readonly iconButtonLogin: ButtonIconType = 'm-login';
 
-  readonly authService: Auth = inject(Auth);
+  readonly authService: AuthService = inject(AuthService);
 
   // Dialog state
   showLoginDialog = false;

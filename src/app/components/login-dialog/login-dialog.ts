@@ -7,8 +7,8 @@ import {
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { Auth } from '../../../services';
-import { LoginRequest } from '../../../models/user.model';
+import { AuthService } from '../../services';
+import { LoginRequest } from '../../models/user.model';
 
 @Component({
   selector: 'app-login-dialog',
@@ -27,7 +27,7 @@ export class LoginDialog {
   errorMessage = '';
 
   private readonly fb = inject(FormBuilder);
-  private readonly authService = inject(Auth);
+  private readonly authService: AuthService = inject(AuthService);
 
   constructor() {
     this.loginForm = this.fb.group({

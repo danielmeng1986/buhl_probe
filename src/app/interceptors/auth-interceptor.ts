@@ -8,7 +8,7 @@ import {
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, switchMap, share } from 'rxjs/operators';
-import { Auth } from '../services/auth';
+import { AuthService } from '../services';
 
 // Refresh state management
 let refreshObservable$: Observable<string> | null = null;
@@ -17,7 +17,7 @@ export const authInterceptor: HttpInterceptorFn = (
   request: HttpRequest<unknown>,
   next: HttpHandlerFn,
 ): Observable<HttpEvent<unknown>> => {
-  const authService = inject(Auth);
+  const authService = inject(AuthService);
 
   // Automatically add Authorization header for requests that need authentication
   const authRequest = addAuthHeaderIfNeeded(request, authService);
@@ -41,7 +41,7 @@ export const authInterceptor: HttpInterceptorFn = (
 function handle401Error(
   request: HttpRequest<unknown>,
   next: HttpHandlerFn,
-  authService: Auth,
+  authService: AuthService,
 ): Observable<HttpEvent<unknown>> {
   
   // If no refresh is in progress, create a new refresh Observable
@@ -111,7 +111,7 @@ function isLoginRequest(request: HttpRequest<unknown>): boolean {
 
 function addAuthHeaderIfNeeded(
   request: HttpRequest<unknown>,
-  authService: Auth,
+  authService: AuthService,
 ): HttpRequest<unknown> {
   // If it's a login request or refresh request, don't add Authorization header
   if (isLoginRequest(request) || isRefreshRequest(request)) {

@@ -1,13 +1,13 @@
 import { Injectable, inject, OnDestroy } from '@angular/core';
 import { takeUntil, switchMap, tap } from 'rxjs/operators';
 import { Subject, timer, Subscription, EMPTY } from 'rxjs';
-import { Auth } from './auth';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserSyncService implements OnDestroy {
-  private authService = inject(Auth);
+  private authService = inject(AuthService);
   private destroy$ = new Subject<void>();
   private currentSyncSubscription: Subscription | null = null;
 
