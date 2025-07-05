@@ -40,6 +40,7 @@ $breakpoints: (
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
@@ -49,6 +50,8 @@ body {
   line-height: 1.6;
   color: $text-primary;
   background-color: $bg-primary;
+  height: 100%;
+  min-height: 100vh;
 }
 
 // ===========================

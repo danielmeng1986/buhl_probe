@@ -59,23 +59,3 @@
   display: flex;
   gap: 20px;
 }
-
-// 测试按钮样式
-.sync-test-btn {
-  background: $color-green;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  font-size: 12px;
-  cursor: pointer;
-  margin-left: 8px;
-  
-  &:hover {
-    background: color.adjust($color-green, $lightness: -10%);
-  }
-  
-  &:active {
-    transform: translateY(1px);
-  }
-}
