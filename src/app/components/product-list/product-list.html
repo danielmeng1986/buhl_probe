@@ -1,22 +1,21 @@
 <div class="product-list-container">
   @if (products.length > 0) {
-  <div class="products-grid responsive-grid">
-    @for (product of products; track trackByProductId($index, product)) {
-    <app-product-card [product]="product">
-    </app-product-card>
-    }
-  </div>
+    <div class="responsive-grid">
+      @for (product of products; track trackByProductId($index, product)) {
+        <app-product-card [product]="product"> </app-product-card>
+      }
+    </div>
   }
 
   @if (isLoading) {
-  <div class="loading">
-    <p>{{ "COMMON.LOADING" | translate }}</p>
-  </div>
+    <div class="loading">
+      <p>{{ "COMMON.LOADING" | translate }}</p>
+    </div>
   }
 
   @if (!isLoading && products.length === 0) {
-  <div class="empty-state">
-    <p>{{ "PRODUCT.NO_PRODUCTS_AVAILABLE" | translate }}</p>
-  </div>
+    <div class="empty-state">
+      <p>{{ "PRODUCT.NO_PRODUCTS_AVAILABLE" | translate }}</p>
+    </div>
   }
 </div>

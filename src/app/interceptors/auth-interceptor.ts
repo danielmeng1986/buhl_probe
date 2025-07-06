@@ -21,18 +21,24 @@ export const authInterceptor: HttpInterceptorFn = (
 
   // Automatically add Authorization header for requests that need authentication
   const authRequest = addAuthHeaderIfNeeded(request, authService);
-  
+
   return next(authRequest).pipe(
     catchError((error: HttpErrorResponse) => {
-      console.log(`AuthInterceptor: Request to ${request.url} failed with status ${error.status}`);
-      
+      console.log(
+        `AuthInterceptor: Request to ${request.url} failed with status ${error.status}`,
+      );
+
       // Only handle 401 errors, excluding login requests
       if (error.status === 401 && !isLoginRequest(request)) {
-        console.log('AuthInterceptor: 401 error detected for non-login request, handling...');
+        console.log(
+          'AuthInterceptor: 401 error detected for non-login request, handling...',
+        );
         return handle401Error(request, next, authService);
       }
-      
-      console.log('AuthInterceptor: Error not handled by interceptor, passing through');
+
+      console.log(
+        'AuthInterceptor: Error not handled by interceptor, passing through',
+      );
       return throwError(() => error);
     }),
   );
@@ -43,45 +49,50 @@ function handle401Error(
   next: HttpHandlerFn,
   authService: AuthService,
 ): Observable<HttpEvent<unknown>> {
-  
   // If no refresh is in progress, create a new refresh Observable
   if (!refreshObservable$) {
     console.log('AuthInterceptor: Starting token refresh...');
-    
+
     refreshObservable$ = authService.refreshAuthSession().pipe(
       switchMap((response) => {
         console.log('AuthInterceptor: Token refresh successful');
-        
+
         // Create a simple Observable to return the token
-        return new Observable<string>(subscriber => {
+        return new Observable<string>((subscriber) => {
           subscriber.next(response.accessToken);
           subscriber.complete();
         });
       }),
       catchError((error) => {
         console.error('AuthInterceptor: Token refresh failed:', error);
-        
+
         // Log out user
         authService.logout();
-        
+
         return throwError(() => error);
       }),
-      share() // Ensure multiple subscribers share the same refresh process
+      share(), // Ensure multiple subscribers share the same refresh process
     );
-    
+
     // Clean up state after stream completion
     refreshObservable$.subscribe({
       complete: () => {
-        console.log('AuthInterceptor: Refresh observable completed, clearing state');
+        console.log(
+          'AuthInterceptor: Refresh observable completed, clearing state',
+        );
         refreshObservable$ = null;
       },
       error: () => {
-        console.log('AuthInterceptor: Refresh observable errored, clearing state');
+        console.log(
+          'AuthInterceptor: Refresh observable errored, clearing state',
+        );
         refreshObservable$ = null;
-      }
+      },
     });
   } else {
-    console.log('AuthInterceptor: Token refresh already in progress, waiting...');
+    console.log(
+      'AuthInterceptor: Token refresh already in progress, waiting...',
+    );
   }
 
   // Wait for refresh completion and retry the request
@@ -90,7 +101,7 @@ function handle401Error(
       console.log('AuthInterceptor: Retrying request with new token');
       const authRequest = addTokenToRequest(request, newToken);
       return next(authRequest);
-    })
+    }),
   );
 }
 
@@ -126,7 +137,10 @@ function addAuthHeaderIfNeeded(
   // Get current access token
   const token = authService.getAccessToken();
   if (token) {
-    console.log('AuthInterceptor: Adding Authorization header to request:', request.url);
+    console.log(
+      'AuthInterceptor: Adding Authorization header to request:',
+      request.url,
+    );
     return request.clone({
       setHeaders: {
         Authorization: `Bearer ${token}`,

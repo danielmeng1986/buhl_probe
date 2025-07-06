@@ -22,21 +22,24 @@ export class App implements OnInit {
   ngOnInit(): void {
     // UserSyncService auto-starts when injected - it will automatically sync user info every 10s after login
     console.log('App: UserSyncService initialized:', this.userSyncService);
-    
+
     // Check initial authentication status
-    console.log('App: Initial authentication status:', this.authService.isAuthenticated());
+    console.log(
+      'App: Initial authentication status:',
+      this.authService.isAuthenticated(),
+    );
     console.log('App: Initial user:', this.authService.getCurrentUserSync());
-    
+
     // Listen to authentication status changes
     this.authService.isAuthenticated$.subscribe((isAuth: boolean) => {
       console.log('App: Authentication status changed to:', isAuth);
     });
-    
+
     // Listen to user status changes
     this.authService.currentUser$.subscribe((user) => {
       console.log('App: Current user changed to:', user);
     });
-    
+
     // Ensure translation service is initialized
     console.log(
       'App initialized, current language:',

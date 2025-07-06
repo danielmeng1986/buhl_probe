@@ -13,24 +13,14 @@
 }
 
 .header-container {
-  display: flex;
+  @include base-container;
   justify-content: space-between;
   align-items: center;
-  padding: 0;
-
-  margin: 0 20px 0 12px;
-  width: calc(100vw - 32px);
   height: 40px;
 
   @include respond-to("tablet") {
-    margin: 0 8px 0 16px;
-    width: calc(100vw - 24px);
-  }
-
-  @include respond-to("desktop") {
-    max-width: 1120px;
-    margin: 0 auto;
-    width: 1120px;
+    padding-left: 24px;
+    padding-right: 36px;
   }
 }
 

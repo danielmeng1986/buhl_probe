@@ -31,7 +31,7 @@
 
   h2 {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: 500;
     color: #333;
   }
@@ -67,7 +67,7 @@
     margin-bottom: 6px;
     font-weight: 500;
     color: #333;
-    font-size: 0.875rem;
+    font-size: 14px;
   }
 
   input {
@@ -75,7 +75,7 @@
     padding: 10px 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 0.875rem;
+    font-size: 14px;
     transition: border-color 0.2s ease;
     box-sizing: border-box;
 
@@ -102,7 +102,7 @@
 
 .error-message {
   color: #dc3545;
-  font-size: 0.75rem;
+  font-size: 12px;
   margin-top: 4px;
   min-height: 18px;
 }
@@ -120,7 +120,7 @@
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;

@@ -1,3 +1,5 @@
+@use "../../../styles" as *;
+
 // Home component responsive styles
 .home-container {
   min-height: 100vh;
@@ -7,46 +9,46 @@
 // MAIN CONTENT SECTIONS
 // ===========================
 .main-content {
-  padding: 1rem;
+  padding: 16px;
 
-  @media (min-width: 768px) {
-    padding: 1.5rem;
+  @include respond-to("tablet") {
+    padding: 24px;
   }
 
-  @media (min-width: 1200px) {
-    padding: 2rem;
+  @include respond-to("desktop") {
+    padding: 32px;
   }
 
-  @media (min-width: 1980px) {
-    padding: 2.5rem;
+  @include respond-to("desktop-xl") {
+    padding: 40px;
   }
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
 
-  @media (min-width: 768px) {
-    margin-bottom: 3rem;
+  @include respond-to("tablet") {
+    margin-bottom: 48px;
   }
 
   h2 {
     color: #333;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 
     // Responsive font sizes
-    font-size: 1.5rem;
+    font-size: 24px;
 
-    @media (min-width: 768px) {
-      font-size: 2rem;
+    @include respond-to("tablet") {
+      font-size: 32px;
     }
 
-    @media (min-width: 1200px) {
-      font-size: 2.5rem;
+    @include respond-to("desktop") {
+      font-size: 40px;
     }
 
-    @media (min-width: 1980px) {
-      font-size: 3rem;
+    @include respond-to("desktop-xl") {
+      font-size: 48px;
     }
   }
 
@@ -56,18 +58,18 @@
     margin: 0 auto;
 
     // Responsive font sizes
-    font-size: 0.9rem;
+    font-size: 14px;
 
-    @media (min-width: 768px) {
-      font-size: 1rem;
+    @include respond-to("tablet") {
+      font-size: 16px;
     }
 
-    @media (min-width: 1200px) {
-      font-size: 1.1rem;
+    @include respond-to("desktop") {
+      font-size: 18px;
     }
 
-    @media (min-width: 1980px) {
-      font-size: 1.2rem;
+    @include respond-to("desktop-xl") {
+      font-size: 19px;
     }
   }
 }
@@ -76,36 +78,36 @@
 // FEATURED PRODUCTS SECTION
 // ===========================
 .featured-section {
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
 
-  @media (min-width: 768px) {
-    margin-bottom: 3rem;
+  @include respond-to("tablet") {
+    margin-bottom: 48px;
   }
 
-  @media (min-width: 1200px) {
-    margin-bottom: 4rem;
+  @include respond-to("desktop") {
+    margin-bottom: 64px;
   }
 }
 
 .responsive-grid {
   display: grid;
-  gap: 1rem;
+  gap: 16px;
   grid-template-columns: 1fr;
   grid-auto-flow: row;
 
-  @media (min-width: 768px) {
+  @include respond-to("tablet") {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 24px;
   }
 
-  @media (min-width: 1200px) {
+  @include respond-to("desktop") {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 32px;
   }
 
-  @media (min-width: 1980px) {
+  @include respond-to("desktop-xl") {
     grid-template-columns: repeat(4, 1fr);
-    gap: 2.5rem;
+    gap: 40px;
   }
 }
 
@@ -114,36 +116,36 @@
 // ===========================
 .features-section {
   background: #f8f9fa;
-  padding: 1.5rem;
+  padding: 24px;
   border-radius: 16px;
 
-  @media (min-width: 768px) {
-    padding: 2rem;
+  @include respond-to("tablet") {
+    padding: 32px;
     border-radius: 24px;
   }
 
-  @media (min-width: 1200px) {
-    padding: 3rem;
+  @include respond-to("desktop") {
+    padding: 48px;
   }
 
-  @media (min-width: 1980px) {
-    padding: 4rem;
+  @include respond-to("desktop-xl") {
+    padding: 64px;
   }
 }
 
 .features-grid {
   display: grid;
-  gap: 1rem;
+  gap: 16px;
   grid-template-columns: 1fr;
 
-  @media (min-width: 768px) {
+  @include respond-to("tablet") {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 24px;
   }
 
-  @media (min-width: 1200px) {
+  @include respond-to("desktop") {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 32px;
   }
 }
 
@@ -154,15 +156,15 @@
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
-  padding: 1rem;
+  padding: 16px;
 
-  @media (min-width: 768px) {
-    padding: 1.5rem;
+  @include respond-to("tablet") {
+    padding: 24px;
     border-radius: 16px;
   }
 
-  @media (min-width: 1200px) {
-    padding: 2rem;
+  @include respond-to("desktop") {
+    padding: 32px;
   }
 
   &:hover {
@@ -174,20 +176,20 @@
 .feature-icon {
   width: 50px;
   height: 50px;
-  margin: 0 auto 1rem;
+  margin: 0 auto 16px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  @media (min-width: 768px) {
+  @include respond-to("tablet") {
     width: 60px;
     height: 60px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 24px;
   }
 
-  @media (min-width: 1200px) {
+  @include respond-to("desktop") {
     width: 80px;
     height: 80px;
   }
@@ -197,12 +199,12 @@
     height: 20px;
     filter: brightness(0) invert(1);
 
-    @media (min-width: 768px) {
+    @include respond-to("tablet") {
       width: 24px;
       height: 24px;
     }
 
-    @media (min-width: 1200px) {
+    @include respond-to("desktop") {
       width: 32px;
       height: 32px;
     }
@@ -211,22 +213,22 @@
 
 .feature-card h3 {
   color: #333;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 
   // Responsive font sizes
-  font-size: 1.1rem;
+  font-size: 18px;
 
-  @media (min-width: 768px) {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+  @include respond-to("tablet") {
+    font-size: 19px;
+    margin-bottom: 16px;
   }
 
-  @media (min-width: 1200px) {
-    font-size: 1.3rem;
+  @include respond-to("desktop") {
+    font-size: 21px;
   }
 
-  @media (min-width: 1980px) {
-    font-size: 1.4rem;
+  @include respond-to("desktop-xl") {
+    font-size: 22px;
   }
 }
 
@@ -235,14 +237,14 @@
   line-height: 1.6;
 
   // Responsive font sizes
-  font-size: 0.9rem;
+  font-size: 14px;
 
-  @media (min-width: 768px) {
-    font-size: 1rem;
+  @include respond-to("tablet") {
+    font-size: 16px;
   }
 
-  @media (min-width: 1200px) {
-    font-size: 1.1rem;
+  @include respond-to("desktop") {
+    font-size: 18px;
   }
 }
 
@@ -252,28 +254,28 @@
 @media (max-width: 320px) {
   .hero {
     min-height: 50vh;
-    padding: 1rem 0.5rem;
+    padding: 16px 8px;
   }
 
   .hero-title {
-    font-size: 1.6rem;
+    font-size: 26px;
   }
 
   .hero-subtitle {
-    font-size: 0.9rem;
+    font-size: 14px;
   }
 
   .cta-button {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 10px 24px;
+    font-size: 14px;
   }
 
   .features-grid {
-    gap: 0.8rem;
+    gap: 13px;
   }
 
   .feature-card {
-    padding: 1rem;
+    padding: 16px;
   }
 
   .feature-icon {

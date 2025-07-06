@@ -53,8 +53,10 @@ export class AuthService {
           const user: User = this.extractUserFromResponse(response);
           this.currentUserSubject.next(user);
           this.isAuthenticatedSubject.next(true);
-          
-          console.log('Auth: Login successful, authentication state updated to true');
+
+          console.log(
+            'Auth: Login successful, authentication state updated to true',
+          );
         }),
         catchError((error) => {
           console.error('Login error:', error);
@@ -76,29 +78,27 @@ export class AuthService {
     }
 
     // Don't manually set Authorization header, let AuthInterceptor handle it uniformly
-    return this.http
-      .get<User>(`${this.API_BASE}/me`)
-      .pipe(
-        tap((user) => {
-          // Update user information
-          this.storeUser(user);
-          this.currentUserSubject.next(user);
-        }),
-        catchError((error) => {
-          console.error('Get current user error:', error);
-          // If token is invalid, clear authentication state
-          if (error.status === 401) {
-            console.log('Auth: 401 error in getCurrentUser, token may be expired');
-            // Don't call logout here, let AuthInterceptor handle it
-          }
-          return throwError(
-            () =>
-              new Error(
-                error.error?.message || 'Failed to get user information',
-              ),
+    return this.http.get<User>(`${this.API_BASE}/me`).pipe(
+      tap((user) => {
+        // Update user information
+        this.storeUser(user);
+        this.currentUserSubject.next(user);
+      }),
+      catchError((error) => {
+        console.error('Get current user error:', error);
+        // If token is invalid, clear authentication state
+        if (error.status === 401) {
+          console.log(
+            'Auth: 401 error in getCurrentUser, token may be expired',
           );
-        }),
-      );
+          // Don't call logout here, let AuthInterceptor handle it
+        }
+        return throwError(
+          () =>
+            new Error(error.error?.message || 'Failed to get user information'),
+        );
+      }),
+    );
   }
 
   /**
@@ -145,7 +145,7 @@ export class AuthService {
    */
   logout(): void {
     console.log('Auth: Logging out, clearing authentication state...');
-    
+
     // Clear local storage
     localStorage.removeItem(this.TOKEN_KEY);
     localStorage.removeItem(this.REFRESH_TOKEN_KEY);
@@ -154,7 +154,7 @@ export class AuthService {
     // Update state
     this.currentUserSubject.next(null);
     this.isAuthenticatedSubject.next(false);
-    
+
     console.log('Auth: Logout complete, authentication state updated to false');
   }
 
@@ -251,7 +251,7 @@ export class AuthService {
     if (!token) {
       return false;
     }
-    
+
     // In a real application, you might want to check token expiration time
     // Here we simply check if token exists
     try {
@@ -259,7 +259,7 @@ export class AuthService {
       // const payload = JSON.parse(atob(token.split('.')[1]));
       // const currentTime = Math.floor(Date.now() / 1000);
       // return payload.exp > currentTime;
-      
+
       return true; // For now, only check if token exists
     } catch (error) {
       console.error('Error validating token:', error);

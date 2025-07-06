@@ -6,8 +6,6 @@
 @use "styles/fonts" as *;
 @use "styles/colors" as *;
 
-// Remove Google Fonts import - we're using local fonts now
-
 // ===========================
 // RESPONSIVE BREAKPOINTS
 // ===========================
@@ -100,5 +98,33 @@ body {
 
   @include respond-to("tablet") {
     display: block;
+  }
+}
+
+// ===========================
+// SHARED CONTAINER STYLES
+// ===========================
+
+// Base container mixin with common responsive behavior
+@mixin base-container {
+  display: flex;
+  max-width: 1120px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+
+  // Mobile: add side padding
+  padding-left: 24px;
+  padding-right: 24px;
+
+  @include respond-to("tablet") {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  @include respond-to("desktop") {
+    padding-left: 0;
+    padding-right: 0;
+    width: 1120px;
   }
 }

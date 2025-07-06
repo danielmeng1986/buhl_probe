@@ -28,12 +28,15 @@ export class UserSyncService implements OnDestroy {
    */
   private initializeUserSync(): void {
     console.log('UserSyncService: Setting up authentication listener...');
-    
+
     this.authService.isAuthenticated$
       .pipe(
         tap((isAuthenticated) => {
-          console.log('UserSyncService: Authentication status changed:', isAuthenticated);
-          
+          console.log(
+            'UserSyncService: Authentication status changed:',
+            isAuthenticated,
+          );
+
           if (isAuthenticated) {
             this.startUserSync();
           } else {
@@ -51,20 +54,24 @@ export class UserSyncService implements OnDestroy {
   private startUserSync(): void {
     // If there's already a timer running, stop it first
     this.stopUserSync();
-    
+
     console.log('UserSyncService: Starting 10-second interval timer...');
-    
+
     this.currentSyncSubscription = timer(0, 10000) // Execute immediately, then every 10 seconds
       .pipe(
         switchMap((timerCount) => {
-          console.log(`UserSyncService: Timer tick #${timerCount + 1}, fetching user info...`);
-          
+          console.log(
+            `UserSyncService: Timer tick #${timerCount + 1}, fetching user info...`,
+          );
+
           // Check if user is still authenticated
           if (!this.authService.isAuthenticated()) {
-            console.log('UserSyncService: User no longer authenticated, stopping sync');
+            console.log(
+              'UserSyncService: User no longer authenticated, stopping sync',
+            );
             return EMPTY; // Stop sending requests
           }
-          
+
           return this.authService.getCurrentUser();
         }),
         takeUntil(this.destroy$),
@@ -114,6 +121,9 @@ export class UserSyncService implements OnDestroy {
    * Get current synchronization status
    */
   public isSyncActive(): boolean {
-    return this.currentSyncSubscription !== null && !this.currentSyncSubscription.closed;
+    return (
+      this.currentSyncSubscription !== null &&
+      !this.currentSyncSubscription.closed
+    );
   }
 }

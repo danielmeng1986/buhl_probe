@@ -49,10 +49,18 @@ export class LoginDialog {
 
       this.authService.login(credentials).subscribe({
         next: () => {
-          console.log('LoginDialog: Login successful, checking authentication state...');
-          console.log('LoginDialog: isAuthenticated:', this.authService.isAuthenticated());
-          console.log('LoginDialog: currentUser:', this.authService.getCurrentUserSync());
-          
+          console.log(
+            'LoginDialog: Login successful, checking authentication state...',
+          );
+          console.log(
+            'LoginDialog: isAuthenticated:',
+            this.authService.isAuthenticated(),
+          );
+          console.log(
+            'LoginDialog: currentUser:',
+            this.authService.getCurrentUserSync(),
+          );
+
           this.isLoading = false;
           this.loginSuccess.emit();
           this.dialogClose.emit();
