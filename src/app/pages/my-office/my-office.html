@@ -1,1 +1,24 @@
 <app-hero-section></app-hero-section>
+<div class="feature-cards">
+    <div class="feature-card-container">
+        <app-feature-card
+        [icon]="iconAccounting"
+        titleId="FEATURE_CARD.ACCOUNTING.TITLE"
+        >
+            {{ 'FEATURE_CARD.ACCOUNTING.DESCRIPTION' | translate }}
+        </app-feature-card>
+        <app-feature-card
+        [icon]="iconMarketing"
+        titleId="FEATURE_CARD.MARKETING.TITLE"
+        >
+            {{ 'FEATURE_CARD.MARKETING.DESCRIPTION' | translate }}
+        </app-feature-card>
+        <app-feature-card
+        [icon]="iconUpgrade"
+        titleId="FEATURE_CARD.UPGRADE.TITLE"
+        >
+            {{ 'FEATURE_CARD.UPGRADE.DESCRIPTION' | translate }}
+        </app-feature-card>
+    </div>
+
+</div>

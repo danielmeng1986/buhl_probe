@@ -90,5 +90,12 @@
   "PRODUCT.LANDLORD.DESCRIPTION": "Nebenkostenabrechnung perfekt gemacht. Für alle privaten Vermieter.",
   "FOOTER.REVOCATION_POLICY": "Wiederrufsbelehrung",
   "HERO_SECTION.HEADLINE": "Die flexible Bürosoftware für Ihr unternehmen",
-  "HERO_SECTION.BUTTON_TEXT": "Jetzt testen"
+  "HERO_SECTION.BUTTON_TEXT": "Jetzt testen",
+  "FEATURE_CARD.TITLE": "Buchhaltung",
+  "FEATURE_CARD.ACCOUNTING.TITLE": "Buchhaltung",
+  "FEATURE_CARD.ACCOUNTING.DESCRIPTION": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+  "FEATURE_CARD.MARKETING.TITLE": "Marketing",
+  "FEATURE_CARD.UPGRADE.TITLE": "Upgrade",
+  "FEATURE_CARD.MARKETING.DESCRIPTION": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+  "FEATURE_CARD.UPGRADE.DESCRIPTION": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
 }
