@@ -1,26 +1,27 @@
-import { Component, OnInit, OnDestroy, inject, input } from '@angular/core';
+import { Component, inject, input, OnDestroy, OnInit } from '@angular/core';
+import { BreakpointService, ResponsiveImagePaths } from '../../../services';
+import { Subject, takeUntil } from 'rxjs';
+import { NgClass } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { IconButton } from '../icon-button/icon-button';
-import { CommonModule } from '@angular/common';
-import { BreakpointService, ResponsiveImagePaths } from '../../../services';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+
+export type PrevCardType = 'primary' | 'secondary';
 
 @Component({
-  selector: 'app-hero-section',
-  imports: [TranslateModule, IconButton, CommonModule],
-  templateUrl: './hero-section.html',
-  styleUrl: './hero-section.scss',
+  selector: 'app-prev-card',
+  imports: [NgClass, TranslateModule, IconButton],
+  templateUrl: './prev-card.html',
+  styleUrl: './prev-card.scss'
 })
-export class HeroSection implements OnInit, OnDestroy {
+export class PrevCard implements OnInit, OnDestroy {
   imagePaths = input<ResponsiveImagePaths>();
-  sloganId = input<string>();
+  descriptionId = input<string>('PREV_CARD.DEFAULT_DESCRIPTION');
+  type = input<PrevCardType>('primary');
 
-  currentImageSrc = '/assets/pngs/320-390/Gruppe 22059.png';
-  currentImageSrcset = '/assets/pngs/320-390/Gruppe 22059.png 1x, /assets/pngs/320-390/Gruppe 22059@2x.png 2x';
+  currentImageSrc = '/assets/pngs/320-390/Bild 1.png';
+  currentImageSrcset = '/assets/pngs/320-390/Bild 1.png 1x, /assets/pngs/320-390/Bild 1@2x.png 2x';
 
   private breakpointService = inject(BreakpointService);
-  
   private destroy$ = new Subject<void>();
 
   ngOnInit() {

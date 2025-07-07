@@ -3,7 +3,7 @@
         <div class="hero-section-content">
             <img src="/assets/svgs/mein-buero-logo-h.svg" alt="">
             <div class="roboto-bold">
-                {{ "HERO_SECTION.HEADLINE" | translate }}
+                {{ (sloganId() ?? 'HERO_SECTION.DEFAULT_SLOGAN') | translate }}
             </div>
             <app-icon-button bgColor="secondary" size="large">
                 {{ "HERO_SECTION.BUTTON_TEXT" | translate }}

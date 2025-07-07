@@ -97,5 +97,7 @@
   "FEATURE_CARD.MARKETING.TITLE": "Marketing",
   "FEATURE_CARD.UPGRADE.TITLE": "Upgrade",
   "FEATURE_CARD.MARKETING.DESCRIPTION": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-  "FEATURE_CARD.UPGRADE.DESCRIPTION": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+  "FEATURE_CARD.UPGRADE.DESCRIPTION": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+  "HERO_SECTION.DEFAULT_SLOGAN": "Rechnungen schreiben war noch nie so einfach",
+  "PREV_CARD.DEFAULT_DESCRIPTION": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
 }

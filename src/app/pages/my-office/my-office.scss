@@ -20,3 +20,21 @@
         gap: 24px;
     }
 }
+
+.prev-cards {
+    width: 100%;
+    background-color: white;
+    margin-top: 16px;
+    margin-bottom: 16px;;
+}
+
+.prev-card-container{
+    display: flex;
+    flex-direction: column;
+    @include base-container;
+    @include respond-to('tablet') {
+    };
+    @include respond-to('desktop') {
+        gap: 24px;
+    }
+}

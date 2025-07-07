@@ -1,4 +1,4 @@
-<app-hero-section></app-hero-section>
+<app-hero-section [imagePaths]="imagePaths" sloganId="HERO_SECTION.HEADLINE"></app-hero-section>
 <div class="feature-cards">
     <div class="feature-card-container">
         <app-feature-card
@@ -21,4 +21,18 @@
         </app-feature-card>
     </div>
 
+</div>
+<div class="prev-cards">
+    <div class="prev-card-container">
+        <app-prev-card
+            [imagePaths]="prevCardImagePaths"
+            type="primary"
+            descriptionId="PREV_CARD.DEFAULT_DESCRIPTION"
+        ></app-prev-card>
+        <app-prev-card
+            [imagePaths]="prevCardImagePaths"
+            type="secondary"
+            descriptionId="PREV_CARD.DEFAULT_DESCRIPTION"
+        ></app-prev-card>
+    </div>
 </div>

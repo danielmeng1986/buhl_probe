@@ -11,6 +11,23 @@ export const BREAKPOINTS = {
   desktopXl: '1980px',
 } as const;
 
+export interface ImagePaths {
+    mobile: string;
+    mobileM?: string;
+    tablet: string;
+    desktop: string;
+    desktopXl: string;
+  }
+
+// Interface for responsive image paths with src and srcset
+export interface ResponsiveImagePaths {
+  mobile: { src: string; srcset: string };
+  mobileM?: { src: string; srcset: string };
+  tablet: { src: string; srcset: string };
+  desktop: { src: string; srcset: string };
+  desktopXl: { src: string; srcset: string };
+}
+
 // Screen size type for better type safety
 export type ScreenSize = 'mobile' | 'mobile-m' | 'tablet' | 'desktop' | 'desktop-xl';
 
@@ -89,13 +106,7 @@ export class BreakpointService {
    * Get responsive image source based on screen size
    * Generic method that can be used by any component
    */
-  getResponsiveImageSrc$(imagePaths: {
-    mobile: string;
-    mobileM?: string;
-    tablet: string;
-    desktop: string;
-    desktopXl: string;
-  }): Observable<string> {
+  getResponsiveImageSrc$(imagePaths: ImagePaths): Observable<string> {
     return this.getCurrentScreenSize$().pipe(
       map(screenSize => {
         switch (screenSize) {
@@ -117,13 +128,7 @@ export class BreakpointService {
   /**
    * Get responsive image srcset based on screen size
    */
-  getResponsiveImageSrcset$(imagePaths: {
-    mobile: { src: string; srcset: string };
-    mobileM?: { src: string; srcset: string };
-    tablet: { src: string; srcset: string };
-    desktop: { src: string; srcset: string };
-    desktopXl: { src: string; srcset: string };
-  }): Observable<{ src: string; srcset: string }> {
+  getResponsiveImageSrcset$(imagePaths: ResponsiveImagePaths): Observable<{ src: string; srcset: string }> {
     return this.getCurrentScreenSize$().pipe(
       map(screenSize => {
         switch (screenSize) {
