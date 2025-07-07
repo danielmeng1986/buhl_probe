@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 export type IconType =
   | 's-menu'
@@ -15,7 +15,7 @@ export type IconType =
   styleUrl: './icon-text.scss',
 })
 export class IconText {
-  @Input() icon: IconType = 's-search';
+  icon = input<IconType>('s-search');
 
   private iconMap: Record<IconType, string> = {
     's-menu': '/assets/svgs/menu-24px.svg',
@@ -27,6 +27,6 @@ export class IconText {
   };
 
   get iconPath(): string {
-    return this.iconMap[this.icon] || this.iconMap['s-search'];
+    return this.iconMap[this.icon()] || this.iconMap['s-search'];
   }
 }

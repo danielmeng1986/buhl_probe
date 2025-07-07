@@ -3,11 +3,11 @@
 @use "../../../styles" as *;
 
 .product-list-container {
-  @include base-container;
   flex-direction: column;
   gap: 32px;
   padding-top: 32px;
   padding-bottom: 32px;
+  @include base-container;
 }
 
 .loading,

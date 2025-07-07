@@ -13,7 +13,7 @@ import {
 } from '../../shared/components/icon-button/icon-button';
 import { LoginDialog } from '../login-dialog/login-dialog';
 import { LogoutDialog } from '../logout-dialog/logout-dialog';
-import { AuthService } from '../../services';
+import { AuthService, BreakpointService } from '../../services';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
@@ -42,6 +42,7 @@ export class Header {
   readonly iconButtonLogin: ButtonIconType = 'm-login';
 
   readonly authService: AuthService = inject(AuthService);
+  readonly breakpointService = inject(BreakpointService);
 
   // Dialog state
   showLoginDialog = false;

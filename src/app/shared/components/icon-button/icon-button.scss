@@ -1,7 +1,9 @@
 @use "../../../../styles/colors" as *;
+@use "../../../../styles/fonts" as *;
 
 .icon-button-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: center;
   overflow: hidden;
   cursor: pointer;
@@ -9,10 +11,12 @@
   &.medium {
     height: 36px;
     border-radius: 18px;
+    gap: 8px;
   }
 
   &.large {
     height: 48px;
+    width: 240px;
     border-radius: 24px;
   }
 
@@ -33,6 +37,7 @@
     color: white;
     text-transform: uppercase;
     height: 100%;
+    width: 100%;
   }
 
   &.medium .text-wrapper {
@@ -41,27 +46,35 @@
     letter-spacing: 0.7px;
     line-height: 19px;
     justify-content: flex-start;
-    margin-left: 8px;
-    margin-right: 16px;
+    padding-right: 16px;
   }
 
   &.large .text-wrapper {
-    font-size: 21px;
+    font-size: 16px;
     text-align: center;
-    letter-spacing: 1.44px;
-    line-height: 21px;
+    letter-spacing: 1.12px;
+    height: 21px;
     justify-content: center;
   }
 
   &.medium .icon-wrapper {
-    width: 24px;
+    width: auto;
     height: 24px;
-    margin-left: 12px;
+    justify-content: center;
+    padding-left: 12px;
   }
 
   &.large .icon-wrapper {
-    width: 48px;
+    width: 80px;
     height: 48px;
-    padding-left: 16px;
+    justify-content: center;
+  }  &.no-icon {
+    grid-template-columns: 1fr;
+    
+    .text-wrapper {
+      justify-content: center;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
   }
 }

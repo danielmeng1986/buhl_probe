@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
@@ -11,5 +11,5 @@ import { Product } from '../../models/product.model';
   styleUrl: './product-card.scss',
 })
 export class ProductCard {
-  @Input() product!: Product;
+  product = input.required<Product>();
 }

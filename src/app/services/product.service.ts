@@ -21,22 +21,29 @@ export class ProductService {
       id: 1,
       nameId: 'PRODUCT.MY_OFFICE.NAME',
       descriptionId: 'PRODUCT.MY_OFFICE.DESCRIPTION',
-      imageUrl: 'assets/pngs/Gruppe 22024.png',
+      imageUrl: 'assets/pngs/1200/Gruppe 22024@2x.png',
       routerLink: '/my-office',
     },
     {
       id: 2,
       nameId: 'PRODUCT.MY_CLUB.NAME',
       descriptionId: 'PRODUCT.MY_CLUB.DESCRIPTION',
-      imageUrl: 'assets/pngs/Gruppe 22024.png',
+      imageUrl: 'assets/pngs/1200/Gruppe 22024@2x.png',
       routerLink: '/my-club',
     },
     {
       id: 3,
       nameId: 'PRODUCT.TAX.NAME',
       descriptionId: 'PRODUCT.TAX.DESCRIPTION',
-      imageUrl: 'assets/pngs/Gruppe 22024.png',
+      imageUrl: 'assets/pngs/1200/Gruppe 22024@2x.png',
       routerLink: '/my-tax',
+    },
+    {
+      id: 4,
+      nameId: 'PRODUCT.LANDLORD.NAME',
+      descriptionId: 'PRODUCT.LANDLORD.DESCRIPTION',
+      imageUrl: 'assets/pngs/1200/Gruppe 22024@2x.png',
+      routerLink: '/my-landlord',
     },
   ];
 

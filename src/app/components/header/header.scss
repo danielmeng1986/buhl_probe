@@ -13,14 +13,19 @@
 }
 
 .header-container {
-  @include base-container;
   justify-content: space-between;
   align-items: center;
   height: 40px;
+  @include base-container;
 
   @include respond-to("tablet") {
     padding-left: 24px;
     padding-right: 36px;
+  }
+
+  @include respond-to("desktop") {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

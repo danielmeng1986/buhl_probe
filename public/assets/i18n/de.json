@@ -63,7 +63,7 @@
   "FOOTER.AGB": "AGB",
   "FOOTER.IMPRINT": "Impressum",
   "FOOTER.DATA_PROTECTION": "Datenschutz",
-  "FOOTER.REVOCATION": "Wiederrufsbelehrung",
+  "FOOTER.REVOCATION": "Wiederruf",
   "FOOTER.COOKIES": "Cookies",
   "HEADER.ALL_PRODUCTS": "Alle Produkte",
   "HEADER.PRODUCTS_FINDER": "Produktfinder",
@@ -85,5 +85,10 @@
   "LOGOUT.TITLE": "Abmelden",
   "LOGOUT.CONFIRMATION_MESSAGE": "Sind Sie sicher, dass Sie sich abmelden möchten?",
   "LOGOUT.CONFIRM": "Abmelden",
-  "LOGOUT.CANCEL": "Abbrechen"
+  "LOGOUT.CANCEL": "Abbrechen",
+  "PRODUCT.LANDLORD.NAME": "WISO Vermieter",
+  "PRODUCT.LANDLORD.DESCRIPTION": "Nebenkostenabrechnung perfekt gemacht. Für alle privaten Vermieter.",
+  "FOOTER.REVOCATION_POLICY": "Wiederrufsbelehrung",
+  "HERO_SECTION.HEADLINE": "Die flexible Bürosoftware für Ihr unternehmen",
+  "HERO_SECTION.BUTTON_TEXT": "Jetzt testen"
 }

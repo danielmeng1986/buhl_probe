@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { ColorService } from '../../../services';
 import { CommonModule } from '@angular/common';
 
@@ -13,9 +13,9 @@ export type IconButtonSize = 'medium' | 'large';
   styleUrl: './icon-button.scss',
 })
 export class IconButton {
-  @Input() icon: ButtonIconType | null = null;
-  @Input() bgColor: ButtonBgColorType = 'primary';
-  @Input() size: IconButtonSize = 'medium';
+  icon = input<ButtonIconType | null>(null);
+  bgColor = input<ButtonBgColorType>('primary');
+  size = input<IconButtonSize>('medium');
   readonly colorService = inject(ColorService);
 
   private iconMap: Record<ButtonIconType, string> = {
@@ -24,12 +24,13 @@ export class IconButton {
   };
 
   get iconPath(): string | null {
-    if (this.icon && this.iconMap[this.icon]) {
-      const path = this.iconMap[this.icon];
-      console.log('Icon path:', path, 'for icon:', this.icon); // 调试信息
+    const iconValue = this.icon();
+    if (iconValue && this.iconMap[iconValue]) {
+      const path = this.iconMap[iconValue];
+      console.log('Icon path:', path, 'for icon:', iconValue); // 调试信息
       return path;
     }
-    console.log('No icon path found for:', this.icon); // 调试信息
+    console.log('No icon path found for:', iconValue); // 调试信息
     return null;
   }
 
@@ -39,6 +40,6 @@ export class IconButton {
   };
 
   get bgColorValue(): string {
-    return this.bgColorMap[this.bgColor];
+    return this.bgColorMap[this.bgColor()];
   }
 }

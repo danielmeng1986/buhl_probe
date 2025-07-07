@@ -1,76 +1,57 @@
 <header class="header">
   <div class="header-container">
     <div class="header-container-left">
-      <app-icon-text class="mobile-tablet-only" [icon]="iconMenu">{{
+      @if (breakpointService.isMatchingAny$(['mobile', 'tablet']) | async) {
+      <app-icon-text [icon]="iconMenu">{{
         "HEADER.MENU" | translate
-      }}</app-icon-text>
+        }}</app-icon-text>
+      }
       <img src="assets/svgs/buhl-logo-1.svg" alt="" />
-      <div class="desktop-only">
-        <div class="dropdowns">
-          <app-dropdown-menu
-            >{{ "HEADER.ALL_PRODUCTS" | translate }}
-          </app-dropdown-menu>
-          <app-dropdown-menu
-            >{{ "HEADER.PRODUCTS_FINDER" | translate }}
-          </app-dropdown-menu>
-          <app-dropdown-menu
-            >{{ "HEADER.RECOMMENDATIONS" | translate }}
-          </app-dropdown-menu>
-          <app-dropdown-menu
-            >{{ "HEADER.TEST_VERSIONS" | translate }}
-          </app-dropdown-menu>
-        </div>
+      @if (breakpointService.isMatching$('desktop') | async) {
+      <div class="dropdowns">
+        <app-dropdown-menu>{{ "HEADER.ALL_PRODUCTS" | translate }}
+        </app-dropdown-menu>
+        <app-dropdown-menu>{{ "HEADER.PRODUCTS_FINDER" | translate }}
+        </app-dropdown-menu>
+        <app-dropdown-menu>{{ "HEADER.RECOMMENDATIONS" | translate }}
+        </app-dropdown-menu>
+        <app-dropdown-menu>{{ "HEADER.TEST_VERSIONS" | translate }}
+        </app-dropdown-menu>
       </div>
+      }
     </div>
     <div class="header-container-right">
       <div class="icon-text-container">
-        <app-icon-text class="tablet-desktop-only" [icon]="iconSearch">{{
+        @if (breakpointService.isMatchingAny$(['tablet', 'desktop', 'desktopXl']) | async) {
+        <app-icon-text [icon]="iconSearch">{{
           "HEADER.SEARCH" | translate
-        }}</app-icon-text>
-        <app-icon-text class="tablet-desktop-only" [icon]="iconApps">{{
+          }}</app-icon-text>
+        <app-icon-text [icon]="iconApps">{{
           "HEADER.APPS" | translate
-        }}</app-icon-text>
+          }}</app-icon-text>
+        }
         @if (authService.isAuthenticated$ | async) {
-          <app-icon-text [icon]="iconPerson">{{
-            "HEADER.CUSTOMER_CENTER" | translate
+        <app-icon-text [icon]="iconPerson">{{
+          "HEADER.CUSTOMER_CENTER" | translate
           }}</app-icon-text>
         }
         <app-icon-text [icon]="iconShoppingCart">{{
           "HEADER.SHOPPING_CART" | translate
-        }}</app-icon-text>
+          }}</app-icon-text>
         @if (authService.isAuthenticated()) {
-          <app-icon-text
-            class="mobile-only"
-            [icon]="iconLogin"
-            (click)="openLogoutDialog()"
-            >{{ "HEADER.LOGOUT" | translate }}</app-icon-text
-          >
+        @if (breakpointService.isMatching$('mobileOnly') | async) {
+        <app-icon-text [icon]="iconLogin" (click)="openLogoutDialog()">{{ "HEADER.LOGOUT" | translate }}</app-icon-text>
         } @else {
-          <app-icon-text
-            class="mobile-only"
-            [icon]="iconLogin"
-            (click)="openLoginDialog()"
-            >{{ "HEADER.LOGIN" | translate }}</app-icon-text
-          >
+        <app-icon-button [icon]="iconButtonLogin" bgColor="primary" size="medium" (click)="openLogoutDialog()">{{
+          "HEADER.LOGOUT" | translate }}</app-icon-button>
         }
-      </div>
-      <div class="tablet-desktop-only">
-        @if (authService.isAuthenticated()) {
-          <app-icon-button
-            [icon]="iconButtonLogin"
-            bgColor="primary"
-            size="medium"
-            (click)="openLogoutDialog()"
-            >{{ "HEADER.LOGOUT" | translate }}
-          </app-icon-button>
         } @else {
-          <app-icon-button
-            [icon]="iconButtonLogin"
-            bgColor="primary"
-            size="medium"
-            (click)="openLoginDialog()"
-            >{{ "HEADER.LOGIN" | translate }}
-          </app-icon-button>
+        @if (breakpointService.isMatching$('mobileOnly') | async) {
+        <app-icon-text [icon]="iconLogin" (click)="openLoginDialog()">{{ "HEADER.LOGIN" | translate }}</app-icon-text>
+        } @else {
+        <app-icon-button [icon]="iconButtonLogin" bgColor="primary" size="medium" (click)="openLoginDialog()">{{
+          "HEADER.LOGIN" | translate }}</app-icon-button>
+        }
         }
       </div>
     </div>
@@ -80,18 +61,12 @@
 
 <!-- Login Dialog -->
 @if (showLoginDialog) {
-  <app-login-dialog
-    (dialogClose)="closeLoginDialog()"
-    (loginSuccess)="onLoginSuccess()"
-  >
-  </app-login-dialog>
+<app-login-dialog (dialogClose)="closeLoginDialog()" (loginSuccess)="onLoginSuccess()">
+</app-login-dialog>
 }
 
 <!-- Logout Dialog -->
 @if (showLogoutDialog) {
-  <app-logout-dialog
-    (dialogClose)="closeLogoutDialog()"
-    (logoutSuccess)="onLogoutSuccess()"
-  >
-  </app-logout-dialog>
+<app-logout-dialog (dialogClose)="closeLogoutDialog()" (logoutSuccess)="onLogoutSuccess()">
+</app-logout-dialog>
 }

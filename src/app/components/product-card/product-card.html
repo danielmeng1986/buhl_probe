@@ -1,15 +1,13 @@
-<a [routerLink]="product.routerLink" class="product-card-link">
+<a [routerLink]="product().routerLink" class="product-card-link">
   <div class="product-card">
     <div class="image-container">
-      <img
-        [src]="product.imageUrl"
-        [alt]="product.nameId | translate"
-        class="product-image"
-      />
+      <img [src]="product().imageUrl" [alt]="product().nameId | translate" class="product-image" />
     </div>
     <div class="product-info">
-      <h3 class="product-name">{{ product.nameId | translate }}</h3>
-      <p class="product-description">{{ product.descriptionId | translate }}</p>
+      <h3 class="product-name">{{ product().nameId | translate }}</h3>
+      <p class="product-description">
+        {{ product().descriptionId | translate }}
+      </p>
     </div>
   </div>
 </a>
