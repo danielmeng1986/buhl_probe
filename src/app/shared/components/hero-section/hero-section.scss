@@ -18,12 +18,22 @@
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  gap: 28px;
   @include base-container;
 
   @include respond-to("tablet") {
     flex-direction: row;
     justify-content: space-between;
     position: relative;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @include respond-to("desktop") {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 
@@ -38,18 +48,18 @@
   align-items: center;
 
   img {
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
 
   div {
-    margin-bottom: 10px;
+    width: 280px;
+    margin-bottom: 16px;
     text-align: center;
+    line-height: 32px;
   }
 
   @include respond-to("tablet") {
-    padding-top: 45px;
-    font-size: 40px;
-    line-height: 48px;
+    padding-top: 65px;
     height: 425px;
     width: 350px;
     flex-shrink: 0;
@@ -57,21 +67,25 @@
     justify-content: flex-start;
     align-items: flex-start;
     img {
-      margin-bottom: 30px;
+      margin-bottom: 36px;
     }
-
+    
     div {
+      font-size: 32px;
+      line-height: 38px;
+      width: 360px;
+      height: 119px;
       margin-bottom: 40px;
       text-align: left;
     }
   }
 
   @include respond-to("desktop") {
-    padding-top: 45px;
+    padding-top: 0px;
     font-size: 40px;
     line-height: 48px;
-    height: 474px;
-    width: 500px;
+    height: 288px;
+    width: 606px;
     flex-shrink: 0;
     z-index: 2;
     align-items: flex-start; // Left align on desktop
@@ -81,8 +95,11 @@
     }
 
     div {
-      margin-bottom: 40px;
+      width: 90%;
+      margin-bottom: 56px;
       text-align: left;
+      font-size: 46px;
+      line-height: 60px;
     }
   }
 }
@@ -96,12 +113,6 @@
     height: auto;
     display: block;
     max-width: 100%;
-  }
-
-  picture {
-    width: 100%;
-    height: auto;
-    display: block;
   }
 
   @include respond-to("tablet") {

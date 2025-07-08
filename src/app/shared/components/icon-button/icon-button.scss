@@ -1,5 +1,6 @@
 @use "../../../../styles/colors" as *;
 @use "../../../../styles/fonts" as *;
+@use "../../../../styles" as *;
 
 .icon-button-container {
   display: grid;
@@ -15,9 +16,21 @@
   }
 
   &.large {
-    height: 48px;
-    width: 240px;
-    border-radius: 24px;
+    height: 44px;
+    width: 200px;
+    border-radius: 22px;
+
+    @include respond-to("tablet") {
+      height: 48px;
+      width: 240px;
+      border-radius: 24px;
+    }
+
+    @include respond-to("desktop") {
+      height: 48px;
+      width: 280px;
+      border-radius: 24px;
+    }
   }
 
   .icon-wrapper {
@@ -50,11 +63,14 @@
   }
 
   &.large .text-wrapper {
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     letter-spacing: 1.12px;
     height: 21px;
     justify-content: center;
+    @include respond-to("tablet") {
+      font-size: 16px;
+    }
   }
 
   &.medium .icon-wrapper {
