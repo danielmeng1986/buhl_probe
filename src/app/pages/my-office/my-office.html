@@ -3,8 +3,18 @@
   sloganId="HERO_SECTION.MY_OFFICE.HEADLINE"
   productName="My Office"
 ></app-hero-section>
-<div class="banner">
-  {{ "BANNER.MY_OFFICE.TEXT" | translate }}
+<div class="banner-container">
+  @if( breakpointService.isMatching$('mobileOnly') | async){
+    <div class="banner roboto-regular">
+    {{ "BANNER.MY_OFFICE.TEXT_1" | translate }}
+    <br>
+    {{ "BANNER.MY_OFFICE.TEXT_2" | translate }}
+    </div>
+  }@else {
+    <div class="banner  roboto-bold">
+      {{ "BANNER.MY_OFFICE.TEXT" | translate }}
+    </div>
+  }
 </div>
 <div class="feature-cards">
   <div class="feature-card-container">

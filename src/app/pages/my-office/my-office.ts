@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeroSection } from '../../shared/components/hero-section/hero-section';
 import {
   FeatureCard,
@@ -7,10 +7,12 @@ import {
 import { TranslateModule } from '@ngx-translate/core';
 import { ResponsiveImagePaths } from '../../services';
 import { PrevCard } from '../../shared/components/prev-card/prev-card';
+import { BreakpointService } from '../../services';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-my-office',
-  imports: [HeroSection, FeatureCard, TranslateModule, PrevCard],
+  imports: [HeroSection, FeatureCard, TranslateModule, PrevCard, AsyncPipe],
   templateUrl: './my-office.html',
   styleUrl: './my-office.scss',
 })
@@ -18,6 +20,7 @@ export class MyOffice {
   readonly iconAccounting: FeatureIconType = 'm-accounting';
   readonly iconMarketing: FeatureIconType = 'm-marketing';
   readonly iconUpgrade: FeatureIconType = 'm-upgrade';
+  readonly breakpointService = inject(BreakpointService);
 
   readonly imagePaths: ResponsiveImagePaths = {
     mobile: {
