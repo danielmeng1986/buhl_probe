@@ -1,4 +1,4 @@
-import { Component, inject, output } from '@angular/core';
+import { Component, inject, output, input } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -17,6 +17,9 @@ import { LoginRequest } from '../../models/user.model';
   styleUrl: './login-dialog.scss',
 })
 export class LoginDialog {
+  // Input for custom message
+  message = input<string>('');
+
   // Output events
   dialogClose = output<void>();
   loginSuccess = output<void>();

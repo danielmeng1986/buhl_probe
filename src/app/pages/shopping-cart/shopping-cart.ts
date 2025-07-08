@@ -1,20 +1,12 @@
 import { Component, inject } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { ShoppingCartService } from '../../services';
+import { CommonModule } from '@angular/common';
 import {
   IconText,
   IconType,
 } from '../../shared/components/icon-text/icon-text';
-import { TranslateModule } from '@ngx-translate/core';
-import { ShoppingCartService } from '../../services';
-import { CommonModule } from '@angular/common';
-
-export type ProductName = 'My Office' | 'My Club' | 'My Landlord' | 'My Tax';
-
-export interface ShoppingCartItem {
-  id: string;
-  productName: ProductName;
-  quantity: number;
-  price: number;
-}
+import { ProductName } from '../../types';
 
 @Component({
   selector: 'app-shopping-cart',

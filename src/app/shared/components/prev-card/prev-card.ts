@@ -8,9 +8,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { NgClass } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { IconButton } from '../icon-button/icon-button';
-import { ProductName } from '../../../components/shopping-cart/shopping-cart';
-
-export type PrevCardType = 'primary' | 'secondary';
+import { PrevCardType, ProductName } from '../../../types';
 
 @Component({
   selector: 'app-prev-card',

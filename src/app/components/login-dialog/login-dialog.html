@@ -20,6 +20,12 @@
       </button>
     </div>
 
+    @if (message()) {
+      <div class="message-info">
+        {{ message() }}
+      </div>
+    }
+
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
       <div class="form-group">
         <label for="username">{{ "LOGIN.USERNAME" | translate }}</label>

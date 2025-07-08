@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
-import { RouterLink } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { RouterLink, Router } from '@angular/router';
 import { ColorRatioStrip } from '../../shared/components/color-ratio-strip/color-ratio-strip';
 import {
   IconText,
@@ -50,10 +50,28 @@ export class Header {
   readonly authService: AuthService = inject(AuthService);
   readonly breakpointService = inject(BreakpointService);
   readonly shoppingCartService = inject(ShoppingCartService);
+  readonly translateService = inject(TranslateService);
+  readonly router = inject(Router);
 
   // Dialog state
   showLoginDialog = false;
   showLogoutDialog = false;
+  loginRequiredMessage = '';
+
+  onCustomerCenterClick(event: Event): void {
+    event.preventDefault();
+
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/customer-center']);
+    } else {
+      this.translateService
+        .get('LOGIN.REQUIRED_MESSAGE')
+        .subscribe((message: string) => {
+          this.loginRequiredMessage = message;
+          this.openLoginDialog();
+        });
+    }
+  }
 
   openLoginDialog(): void {
     this.showLoginDialog = true;
@@ -65,6 +83,7 @@ export class Header {
 
   closeLoginDialog(): void {
     this.showLoginDialog = false;
+    this.loginRequiredMessage = '';
   }
 
   closeLogoutDialog(): void {
@@ -74,6 +93,11 @@ export class Header {
   onLoginSuccess(): void {
     // Optional: Handle successful login (e.g., show success message)
     console.log('Login successful');
+    this.loginRequiredMessage = '';
+    // Navigate to customer center if that was the original intent
+    if (this.loginRequiredMessage) {
+      this.router.navigate(['/customer-center']);
+    }
   }
 
   onLogoutSuccess(): void {

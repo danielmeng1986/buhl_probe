@@ -3,6 +3,22 @@
 @use "../../../styles" as *;
 @use "sass:color";
 
+// Base link styles for reusability
+.base-link {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: 2px solid $color-primary-blue;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
 // Responsive header styles
 .header {
   background: $color-white;
@@ -39,19 +55,9 @@
   }
 
   .logo-link {
+    @extend .base-link;
     display: inline-block;
-    text-decoration: none;
     line-height: 0; // Remove any extra space around the image
-
-    &:hover {
-      opacity: 0.8;
-    }
-
-    &:focus {
-      outline: 2px solid $color-primary-blue;
-      outline-offset: 2px;
-      border-radius: 4px;
-    }
 
     img {
       display: block;
@@ -82,20 +88,9 @@
 }
 
 .shopping-cart-link {
+  @extend .base-link;
   position: relative;
   display: inline-block;
-  text-decoration: none;
-  color: inherit;
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-  &:focus {
-    outline: 2px solid $color-primary-blue;
-    outline-offset: 2px;
-    border-radius: 4px;
-  }
 }
 
 .cart-badge {

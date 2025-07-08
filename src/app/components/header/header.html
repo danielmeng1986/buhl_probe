@@ -38,11 +38,17 @@
           <app-icon-text [icon]="iconApps">{{
             "HEADER.APPS" | translate
           }}</app-icon-text>
-        }
-        @if (authService.isAuthenticated$ | async) {
-          <app-icon-text [icon]="iconPerson">{{
-            "HEADER.CUSTOMER_CENTER" | translate
-          }}</app-icon-text>
+          <a
+            class="base-link"
+            (click)="onCustomerCenterClick($event)"
+            (keydown.enter)="onCustomerCenterClick($event)"
+            tabindex="0"
+            role="button"
+          >
+            <app-icon-text [icon]="iconPerson">{{
+              "HEADER.CUSTOMER_CENTER" | translate
+            }}</app-icon-text>
+          </a>
         }
         <div class="shopping-cart-wrapper">
           <a routerLink="/shopping-cart" class="shopping-cart-link">
@@ -94,6 +100,7 @@
 <!-- Login Dialog -->
 @if (showLoginDialog) {
   <app-login-dialog
+    [message]="loginRequiredMessage"
     (dialogClose)="closeLoginDialog()"
     (loginSuccess)="onLoginSuccess()"
   >

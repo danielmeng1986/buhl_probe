@@ -9,7 +9,7 @@ import {
 } from '../../../services';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ProductName } from '../../../components/shopping-cart/shopping-cart';
+import { ProductName } from '../../../types';
 
 @Component({
   selector: 'app-hero-section',

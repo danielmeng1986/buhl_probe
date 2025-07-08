@@ -1,0 +1,150 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/fonts" as *;
+@use "../../../styles" as *;
+
+.customer-center {
+  min-height: calc(100vh - 160px);
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 40px 0;
+
+  @include respond-to("tablet") {
+    padding: 32px 0;
+  }
+}
+
+.customer-center-container {
+  max-width: 1200px;
+  justify-content: center;
+  @include base-container;
+
+  @include respond-to("tablet") {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.user-profile-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  margin-bottom: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  @include respond-to("tablet") {
+    padding: 24px;
+  }
+
+  @include respond-to("mobile") {
+    padding: 20px;
+  }
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e0e0e0;
+
+  @include respond-to("tablet") {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .avatar-container {
+    margin-right: 24px;
+
+    @include respond-to("tablet") {
+      margin-right: 0;
+      margin-bottom: 16px;
+    }
+  }
+
+  .user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid $color-primary-blue;
+  }
+
+  .avatar-placeholder {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: $color-primary-blue;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .user-info {
+    flex: 1;
+
+    .user-name {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0 0 4px 0;
+    }
+
+    .user-username {
+      font-size: 1rem;
+      color: #666;
+      margin: 0;
+    }
+  }
+}
+
+.profile-details {
+  display: grid;
+  gap: 16px;
+
+  .detail-row {
+    display: flex;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    @include respond-to("mobile") {
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .label {
+      font-weight: 600;
+      color: #555;
+      min-width: 120px;
+      margin-right: 16px;
+
+      @include respond-to("mobile") {
+        min-width: auto;
+        margin-right: 0;
+        font-size: 0.9rem;
+      }
+    }
+
+    .value {
+      color: #333;
+      flex: 1;
+    }
+  }
+}
+
+.loading-state {
+  text-align: center;
+  padding: 60px 20px;
+
+  p {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+  }
+}
