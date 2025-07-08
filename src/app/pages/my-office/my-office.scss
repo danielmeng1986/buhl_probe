@@ -42,7 +42,7 @@
   @include base-container;
   @include respond-to("tablet") {
     flex-direction: row;
-    gap: 16px;
+    gap: 20px;
   }
   @include respond-to("desktop") {
     gap: 24px;
