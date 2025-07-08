@@ -9,9 +9,9 @@
       <a href="#">{{ "FOOTER.IMPRINT" | translate }}</a>
       <a href="#">{{ "FOOTER.DATA_PROTECTION" | translate }}</a>
       <a href="#" class="revocation-link">
-        @if (breakpointService.isMatching$('desktop') | async) {
-          {{"FOOTER.REVOCATION_POLICY" | translate}}
-        }@else {
+        @if (breakpointService.isMatching$("desktop") | async) {
+          {{ "FOOTER.REVOCATION_POLICY" | translate }}
+        } @else {
           {{ "FOOTER.REVOCATION" | translate }}
         }
       </a>

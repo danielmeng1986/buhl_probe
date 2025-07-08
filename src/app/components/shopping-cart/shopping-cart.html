@@ -1,0 +1,48 @@
+<div class="shopping-cart">
+  <div class="cart-header">
+    <app-icon-text [icon]="iconShoppingCart">
+      {{ "HEADER.SHOPPING_CART" | translate }}
+    </app-icon-text>
+    <span class="item-count">
+      ({{ shoppingCartService.totalQuantity() }})
+    </span>
+  </div>
+
+  @if (shoppingCartService.totalQuantity() === 0) {
+    <div class="empty-cart">
+      <p>{{ "SHOPPING_CART.EMPTY" | translate }}</p>
+    </div>
+  } @else {
+    <div class="cart-items">
+      @for (item of shoppingCartService.items(); track item.id) {
+        <div class="cart-item">
+          <div class="item-info">
+            <h4>{{ item.productName }}</h4>
+            <span class="quantity"
+              >{{ "SHOPPING_CART.QUANTITY" | translate }}:
+              {{ item.quantity }}</span
+            >
+            @if (item.price > 0) {
+              <span class="price">{{
+                item.price | currency: "EUR" : "symbol" : "1.2-2" : "de"
+              }}</span>
+            }
+          </div>
+          <button
+            class="remove-btn"
+            (click)="removeItem(item.productName)"
+            [attr.aria-label]="'SHOPPING_CART.REMOVE' | translate"
+          >
+            ✕
+          </button>
+        </div>
+      }
+    </div>
+
+    <div class="cart-actions">
+      <button class="clear-btn" (click)="clearCart()">
+        {{ "SHOPPING_CART.CLEAR" | translate }}
+      </button>
+    </div>
+  }
+</div>

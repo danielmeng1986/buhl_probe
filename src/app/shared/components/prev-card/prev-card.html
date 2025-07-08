@@ -1,15 +1,20 @@
 <div class="prev-card" [ngClass]="type()">
-    <img [src]="currentImageSrc" [srcset]="currentImageSrcset" alt="Prev Image" class="prev-image">
-    <div class="prev-content">
-        <div class="description  roboto-regular">
-            {{ descriptionId() | translate}}
-        </div>
-        <app-icon-button
-            bgColor="secondary"
-            size="large"
-        >
-        {{ "HERO_SECTION.BUTTON_TEXT" | translate }}
-        </app-icon-button>
+  <img
+    [src]="currentImageSrc"
+    [srcset]="currentImageSrcset"
+    alt="Prev Image"
+    class="prev-image"
+  />
+  <div class="prev-content">
+    <div class="description roboto-regular">
+      {{ descriptionId() | translate }}
     </div>
-
+    <app-icon-button
+      bgColor="secondary"
+      size="large"
+      (click)="onTestButtonClick()"
+    >
+      {{ "HERO_SECTION.BUTTON_TEXT" | translate }}
+    </app-icon-button>
+  </div>
 </div>

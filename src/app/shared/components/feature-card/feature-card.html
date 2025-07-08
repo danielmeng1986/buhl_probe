@@ -1,13 +1,13 @@
 <div class="feature-card">
-    <div class="icon-container">
-        <img [src]="iconPath" alt="icon()" class="icon">
+  <div class="icon-container">
+    <img [src]="iconPath" alt="icon()" class="icon" />
+  </div>
+  <div class="text-wrapper">
+    <div class="title roboto-bold">
+      {{ titleId() | translate }}
     </div>
-    <div class="text-wrapper">
-        <div class="title roboto-bold">
-            {{ titleId() | translate }}
-        </div>
-        <div class="description roboto-regular">
-            <ng-content></ng-content>
-        </div>
+    <div class="description roboto-regular">
+      <ng-content></ng-content>
     </div>
+  </div>
 </div>

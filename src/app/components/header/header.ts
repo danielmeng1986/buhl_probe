@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
 import { ColorRatioStrip } from '../../shared/components/color-ratio-strip/color-ratio-strip';
 import {
   IconText,
@@ -13,13 +14,18 @@ import {
 } from '../../shared/components/icon-button/icon-button';
 import { LoginDialog } from '../login-dialog/login-dialog';
 import { LogoutDialog } from '../logout-dialog/logout-dialog';
-import { AuthService, BreakpointService } from '../../services';
+import {
+  AuthService,
+  BreakpointService,
+  ShoppingCartService,
+} from '../../services';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   imports: [
     TranslateModule,
+    RouterLink,
     ColorRatioStrip,
     IconText,
     DropdownMenu,
@@ -43,6 +49,7 @@ export class Header {
 
   readonly authService: AuthService = inject(AuthService);
   readonly breakpointService = inject(BreakpointService);
+  readonly shoppingCartService = inject(ShoppingCartService);
 
   // Dialog state
   showLoginDialog = false;

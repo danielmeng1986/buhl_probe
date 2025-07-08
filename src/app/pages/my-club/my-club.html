@@ -1,1 +1,9 @@
-<p>my-club works!</p>
+<app-hero-section
+  [imagePaths]="imagePaths"
+  sloganId="MY_CLUB.HEADLINE"
+  productName="My Club"
+></app-hero-section>
+<div class="content">
+  <h2>{{ "MY_CLUB.CONTENT_TITLE" | translate }}</h2>
+  <p>{{ "MY_CLUB.CONTENT_DESCRIPTION" | translate }}</p>
+</div>

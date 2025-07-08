@@ -1,40 +1,40 @@
-@use '../../../styles.scss' as *;
+@use "../../../styles.scss" as *;
 
 .feature-cards {
-    width: 100%;
-    background-color: white;
-    margin-top: 16px;
-    margin-bottom: 16px;;
+  width: 100%;
+  background-color: white;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .feature-card-container {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    @include base-container;
-    @include respond-to('tablet') {
-        flex-direction: row;
-        gap: 16px;
-    };
-    @include respond-to('desktop') {
-        gap: 24px;
-    }
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  @include base-container;
+  @include respond-to("tablet") {
+    flex-direction: row;
+    gap: 16px;
+  }
+  @include respond-to("desktop") {
+    gap: 24px;
+  }
 }
 
 .prev-cards {
-    width: 100%;
-    background-color: white;
-    margin-top: 16px;
-    margin-bottom: 16px;;
+  width: 100%;
+  background-color: white;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
-.prev-card-container{
-    display: flex;
-    flex-direction: column;
-    @include base-container;
-    @include respond-to('tablet') {
-    };
-    @include respond-to('desktop') {
-        gap: 24px;
-    }
+.prev-card-container {
+  display: flex;
+  flex-direction: column;
+  @include base-container;
+  @include respond-to("tablet") {
+  }
+  @include respond-to("desktop") {
+    gap: 24px;
+  }
 }

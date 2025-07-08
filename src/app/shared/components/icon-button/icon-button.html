@@ -1,19 +1,26 @@
-<div class="icon-button-container" [ngClass]="{
-    'medium': size() === 'medium',
-    'large': size() === 'large',
-    'no-icon': !icon()
-  }" [ngStyle]="{
+<div
+  class="icon-button-container"
+  [ngClass]="{
+    medium: size() === 'medium',
+    large: size() === 'large',
+    'no-icon': !icon(),
+  }"
+  [ngStyle]="{
     'background-color': bgColorValue,
-  }">
+  }"
+>
   @if (icon()) {
-  <div class="icon-wrapper">
-    <img [src]="iconPath" [alt]="icon()" class="icon" />
-  </div>
+    <div class="icon-wrapper">
+      <img [src]="iconPath" [alt]="icon()" class="icon" />
+    </div>
   }
-  <div class="text-wrapper" [ngClass]="{
-    'roboto-medium': size() === 'medium',
-    'roboto-bold': size() === 'large'
-  }">
+  <div
+    class="text-wrapper"
+    [ngClass]="{
+      'roboto-medium': size() === 'medium',
+      'roboto-bold': size() === 'large',
+    }"
+  >
     <ng-content></ng-content>
   </div>
 </div>

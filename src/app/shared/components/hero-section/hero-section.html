@@ -1,16 +1,25 @@
 <div class="hero-section">
-    <div class="hero-section-container">
-        <div class="hero-section-content">
-            <img src="/assets/svgs/mein-buero-logo-h.svg" alt="">
-            <div class="roboto-bold">
-                {{ (sloganId() ?? 'HERO_SECTION.DEFAULT_SLOGAN') | translate }}
-            </div>
-            <app-icon-button bgColor="secondary" size="large">
-                {{ "HERO_SECTION.BUTTON_TEXT" | translate }}
-            </app-icon-button>
-        </div>
-        <div class="hero-section-image">
-            <img [src]="currentImageSrc" [srcset]="currentImageSrcset" alt="Hero Image" class="hero-image">
-        </div>
+  <div class="hero-section-container">
+    <div class="hero-section-content">
+      <img src="/assets/svgs/mein-buero-logo-h.svg" alt="" />
+      <div class="roboto-bold">
+        {{ sloganId() ?? "HERO_SECTION.DEFAULT_SLOGAN" | translate }}
+      </div>
+      <app-icon-button
+        bgColor="secondary"
+        size="large"
+        (click)="onTestButtonClick()"
+      >
+        {{ "HERO_SECTION.BUTTON_TEXT" | translate }}
+      </app-icon-button>
     </div>
+    <div class="hero-section-image">
+      <img
+        [src]="currentImageSrc"
+        [srcset]="currentImageSrcset"
+        alt="Hero Image"
+        class="hero-image"
+      />
+    </div>
+  </div>
 </div>

@@ -5,19 +5,19 @@ import { Observable, map } from 'rxjs';
 // Breakpoint definitions that match styles.scss
 export const BREAKPOINTS = {
   mobile: '320px',
-  mobileM: '390px', 
+  mobileM: '390px',
   tablet: '768px',
   desktop: '1200px',
   desktopXl: '1980px',
 } as const;
 
 export interface ImagePaths {
-    mobile: string;
-    mobileM?: string;
-    tablet: string;
-    desktop: string;
-    desktopXl: string;
-  }
+  mobile: string;
+  mobileM?: string;
+  tablet: string;
+  desktop: string;
+  desktopXl: string;
+}
 
 // Interface for responsive image paths with src and srcset
 export interface ResponsiveImagePaths {
@@ -29,16 +29,21 @@ export interface ResponsiveImagePaths {
 }
 
 // Screen size type for better type safety
-export type ScreenSize = 'mobile' | 'mobile-m' | 'tablet' | 'desktop' | 'desktop-xl';
+export type ScreenSize =
+  | 'mobile'
+  | 'mobile-m'
+  | 'tablet'
+  | 'desktop'
+  | 'desktop-xl';
 
 // Media query strings
 export const MEDIA_QUERIES = {
   mobile: `(min-width: ${BREAKPOINTS.mobile})`,
-  mobileM: `(min-width: ${BREAKPOINTS.mobileM})`, 
+  mobileM: `(min-width: ${BREAKPOINTS.mobileM})`,
   tablet: `(min-width: ${BREAKPOINTS.tablet})`,
   desktop: `(min-width: ${BREAKPOINTS.desktop})`,
   desktopXl: `(min-width: ${BREAKPOINTS.desktopXl})`,
-  
+
   // Range queries for specific screen sizes
   mobileOnly: `(max-width: ${parseInt(BREAKPOINTS.tablet) - 1}px)`,
   tabletOnly: `(min-width: ${BREAKPOINTS.tablet}) and (max-width: ${parseInt(BREAKPOINTS.desktop) - 1}px)`,
@@ -47,7 +52,7 @@ export const MEDIA_QUERIES = {
 } as const;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BreakpointService {
   private breakpointObserver = inject(BreakpointObserver);
@@ -66,13 +71,13 @@ export class BreakpointService {
         MEDIA_QUERIES.mobile,
       ])
       .pipe(
-        map(result => {
+        map((result) => {
           if (result.breakpoints[MEDIA_QUERIES.desktopXl]) return 'desktop-xl';
           if (result.breakpoints[MEDIA_QUERIES.desktop]) return 'desktop';
           if (result.breakpoints[MEDIA_QUERIES.tablet]) return 'tablet';
           if (result.breakpoints[MEDIA_QUERIES.mobileM]) return 'mobile-m';
           return 'mobile';
-        })
+        }),
       );
   }
 
@@ -82,7 +87,7 @@ export class BreakpointService {
   isMatching$(query: keyof typeof MEDIA_QUERIES): Observable<boolean> {
     return this.breakpointObserver
       .observe(MEDIA_QUERIES[query])
-      .pipe(map(result => result.matches));
+      .pipe(map((result) => result.matches));
   }
 
   /**
@@ -90,15 +95,17 @@ export class BreakpointService {
    */
   isMatchingAny$(queries: (keyof typeof MEDIA_QUERIES)[]): Observable<boolean> {
     return this.observeBreakpoints$(queries).pipe(
-      map(result => result.matches)
+      map((result) => result.matches),
     );
   }
 
   /**
    * Observe multiple breakpoints at once
    */
-  observeBreakpoints$(queries: (keyof typeof MEDIA_QUERIES)[]): Observable<BreakpointState> {
-    const mediaQueries = queries.map(query => MEDIA_QUERIES[query]);
+  observeBreakpoints$(
+    queries: (keyof typeof MEDIA_QUERIES)[],
+  ): Observable<BreakpointState> {
+    const mediaQueries = queries.map((query) => MEDIA_QUERIES[query]);
     return this.breakpointObserver.observe(mediaQueries);
   }
 
@@ -108,7 +115,7 @@ export class BreakpointService {
    */
   getResponsiveImageSrc$(imagePaths: ImagePaths): Observable<string> {
     return this.getCurrentScreenSize$().pipe(
-      map(screenSize => {
+      map((screenSize) => {
         switch (screenSize) {
           case 'desktop-xl':
             return imagePaths.desktopXl;
@@ -121,16 +128,18 @@ export class BreakpointService {
           default:
             return imagePaths.mobile;
         }
-      })
+      }),
     );
   }
 
   /**
    * Get responsive image srcset based on screen size
    */
-  getResponsiveImageSrcset$(imagePaths: ResponsiveImagePaths): Observable<{ src: string; srcset: string }> {
+  getResponsiveImageSrcset$(
+    imagePaths: ResponsiveImagePaths,
+  ): Observable<{ src: string; srcset: string }> {
     return this.getCurrentScreenSize$().pipe(
-      map(screenSize => {
+      map((screenSize) => {
         switch (screenSize) {
           case 'desktop-xl':
             return imagePaths.desktopXl;
@@ -143,7 +152,7 @@ export class BreakpointService {
           default:
             return imagePaths.mobile;
         }
-      })
+      }),
     );
   }
 
@@ -153,9 +162,9 @@ export class BreakpointService {
    */
   getResponsiveCssClasses$(): Observable<string[]> {
     return this.getCurrentScreenSize$().pipe(
-      map(screenSize => {
+      map((screenSize) => {
         const classes = [`screen-${screenSize}`];
-        
+
         // Add utility classes for easier CSS targeting
         if (screenSize === 'mobile' || screenSize === 'mobile-m') {
           classes.push('is-mobile');
@@ -166,9 +175,9 @@ export class BreakpointService {
         if (screenSize === 'desktop' || screenSize === 'desktop-xl') {
           classes.push('is-desktop');
         }
-        
+
         return classes;
-      })
+      }),
     );
   }
 
@@ -178,10 +187,10 @@ export class BreakpointService {
    */
   shouldLoadHeavyResources$(): Observable<boolean> {
     return this.getCurrentScreenSize$().pipe(
-      map(screenSize => {
+      map((screenSize) => {
         // Only load heavy resources on larger screens
         return screenSize === 'desktop' || screenSize === 'desktop-xl';
-      })
+      }),
     );
   }
 }

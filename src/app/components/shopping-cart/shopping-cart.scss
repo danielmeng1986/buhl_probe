@@ -1,0 +1,126 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/fonts" as *;
+@use "sass:color";
+
+.shopping-cart {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+
+  .item-count {
+    color: $color-primary-blue;
+    font-weight: bold;
+  }
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 32px 16px;
+  color: #666;
+  font-style: italic;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+
+  .item-info {
+    flex: 1;
+
+    h4 {
+      margin: 0 0 4px 0;
+      color: $color-primary-blue;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .quantity {
+      display: block;
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 2px;
+    }
+
+    .price {
+      display: block;
+      font-size: 14px;
+      color: $color-primary-orange;
+      font-weight: 600;
+    }
+  }
+
+  .remove-btn {
+    background: $color-red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background: color.adjust($color-red, $lightness: -10%);
+    }
+
+    &:focus {
+      outline: 2px solid $color-primary-blue;
+      outline-offset: 2px;
+    }
+  }
+}
+
+.cart-actions {
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+
+  .clear-btn {
+    width: 100%;
+    padding: 8px 16px;
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background: #5a6268;
+    }
+
+    &:focus {
+      outline: 2px solid $color-primary-blue;
+      outline-offset: 2px;
+    }
+  }
+}

@@ -37,6 +37,26 @@
   .dropdowns {
     margin-left: 20px;
   }
+
+  .logo-link {
+    display: inline-block;
+    text-decoration: none;
+    line-height: 0; // Remove any extra space around the image
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:focus {
+      outline: 2px solid $color-primary-blue;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    img {
+      display: block;
+    }
+  }
 }
 
 .header-container-right {
@@ -53,4 +73,52 @@
 .icon-text-container {
   display: flex;
   gap: 20px;
+}
+
+// Shopping cart wrapper with badge
+.shopping-cart-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.shopping-cart-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: 2px solid $color-primary-blue;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: $color-primary-blue;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  min-width: 20px;
+
+  // If number exceeds 9, make the bubble slightly larger
+  &:has-text {
+    min-width: 24px;
+    border-radius: 12px;
+    padding: 0 4px;
+  }
 }

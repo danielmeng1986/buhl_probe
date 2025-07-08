@@ -1,9 +1,14 @@
 import { Component, inject, input, OnDestroy, OnInit } from '@angular/core';
-import { BreakpointService, ResponsiveImagePaths } from '../../../services';
+import {
+  BreakpointService,
+  ResponsiveImagePaths,
+  ShoppingCartService,
+} from '../../../services';
 import { Subject, takeUntil } from 'rxjs';
 import { NgClass } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { IconButton } from '../icon-button/icon-button';
+import { ProductName } from '../../../components/shopping-cart/shopping-cart';
 
 export type PrevCardType = 'primary' | 'secondary';
 
@@ -11,17 +16,20 @@ export type PrevCardType = 'primary' | 'secondary';
   selector: 'app-prev-card',
   imports: [NgClass, TranslateModule, IconButton],
   templateUrl: './prev-card.html',
-  styleUrl: './prev-card.scss'
+  styleUrl: './prev-card.scss',
 })
 export class PrevCard implements OnInit, OnDestroy {
   imagePaths = input<ResponsiveImagePaths>();
   descriptionId = input<string>('PREV_CARD.DEFAULT_DESCRIPTION');
   type = input<PrevCardType>('primary');
+  productName = input<ProductName>(); // Added: specify which product this card represents
 
   currentImageSrc = '/assets/pngs/320-390/Bild 1.png';
-  currentImageSrcset = '/assets/pngs/320-390/Bild 1.png 1x, /assets/pngs/320-390/Bild 1@2x.png 2x';
+  currentImageSrcset =
+    '/assets/pngs/320-390/Bild 1.png 1x, /assets/pngs/320-390/Bild 1@2x.png 2x';
 
   private breakpointService = inject(BreakpointService);
+  private shoppingCartService = inject(ShoppingCartService);
   private destroy$ = new Subject<void>();
 
   ngOnInit() {
@@ -45,6 +53,18 @@ export class PrevCard implements OnInit, OnDestroy {
           this.currentImageSrc = src;
           this.currentImageSrcset = srcset;
         });
+    }
+  }
+
+  /**
+   * Handle "Jetzt testen" button click event
+   */
+  onTestButtonClick(): void {
+    const product = this.productName();
+    if (product) {
+      this.shoppingCartService.addProduct(product);
+    } else {
+      console.warn('No product name specified for prev card');
     }
   }
 }

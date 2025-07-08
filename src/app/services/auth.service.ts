@@ -42,7 +42,7 @@ export class AuthService {
     return this.http
       .post<LoginResponse>(`${this.API_BASE}/login`, credentials, {
         headers: { 'Content-Type': 'application/json' },
-        // 移除 withCredentials: true 以避免 CORS 问题
+        // Remove withCredentials: true to avoid CORS issues
       })
       .pipe(
         tap((response) => {

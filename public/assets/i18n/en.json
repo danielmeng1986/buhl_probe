@@ -87,5 +87,10 @@
   "LOGOUT.TITLE": "Logout",
   "LOGOUT.CONFIRMATION_MESSAGE": "Are you sure you want to logout?",
   "LOGOUT.CONFIRM": "Logout",
-  "LOGOUT.CANCEL": "Cancel"
+  "LOGOUT.CANCEL": "Cancel",
+  
+  "SHOPPING_CART.EMPTY": "Your cart is empty",
+  "SHOPPING_CART.QUANTITY": "Quantity",
+  "SHOPPING_CART.REMOVE": "Remove",
+  "SHOPPING_CART.CLEAR": "Clear cart"
 }

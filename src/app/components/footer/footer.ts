@@ -12,5 +12,4 @@ import { AsyncPipe } from '@angular/common';
 })
 export class Footer {
   readonly breakpointService: BreakpointService = inject(BreakpointService);
-
 }

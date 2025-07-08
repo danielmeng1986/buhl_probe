@@ -1,40 +1,40 @@
-@use '../../../../styles/colors' as *;
-@use '../../../../styles.scss' as *;
+@use "../../../../styles/colors" as *;
+@use "../../../../styles.scss" as *;
 
 .prev-card {
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
 }
 
 .primary {
-    border-bottom: 5px solid $color-light-gray;
-    @include respond-to('desktop') {
-        flex-direction: row;
-        margin-left: -45px;
-        border-bottom: none;
-    }
+  border-bottom: 5px solid $color-light-gray;
+  @include respond-to("desktop") {
+    flex-direction: row;
+    margin-left: -45px;
+    border-bottom: none;
+  }
 }
 
 .secondary {
-    border-top: 5px solid $color-light-gray;
-    @include respond-to('desktop') {
-        flex-direction: row-reverse;
-        margin-right: -45px;
-        border-top: none;
-    }
+  border-top: 5px solid $color-light-gray;
+  @include respond-to("desktop") {
+    flex-direction: row-reverse;
+    margin-right: -45px;
+    border-top: none;
+  }
 }
 
 .prev-content {
-    font-size: 20px;
-    color: $color-primary-blue;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  font-size: 20px;
+  color: $color-primary-blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    @include respond-to('desktop') {
-        align-items: start;
-    }
-    gap:24px;
+  @include respond-to("desktop") {
+    align-items: start;
+  }
+  gap: 24px;
 }

@@ -27,10 +27,10 @@ export class IconButton {
     const iconValue = this.icon();
     if (iconValue && this.iconMap[iconValue]) {
       const path = this.iconMap[iconValue];
-      console.log('Icon path:', path, 'for icon:', iconValue); // 调试信息
+      console.log('Icon path:', path, 'for icon:', iconValue); // Debug info
       return path;
     }
-    console.log('No icon path found for:', iconValue); // 调试信息
+    console.log('No icon path found for:', iconValue); // Debug info
     return null;
   }
 

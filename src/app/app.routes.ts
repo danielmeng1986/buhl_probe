@@ -4,6 +4,7 @@ import { MyOffice } from './pages/my-office/my-office';
 import { MyClub } from './pages/my-club/my-club';
 import { MyTax } from './pages/my-tax/my-tax';
 import { MyLandlord } from './pages/my-landlord/my-landlord';
+import { ShoppingCart } from './components/shopping-cart/shopping-cart';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: 'my-club', component: MyClub },
   { path: 'my-tax', component: MyTax },
   { path: 'my-landlord', component: MyLandlord },
+  { path: 'shopping-cart', component: ShoppingCart },
   { path: '**', redirectTo: '/' },
 ];
