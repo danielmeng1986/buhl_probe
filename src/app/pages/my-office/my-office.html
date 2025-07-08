@@ -1,8 +1,11 @@
 <app-hero-section
   [imagePaths]="imagePaths"
-  sloganId="HERO_SECTION.HEADLINE"
+  sloganId="HERO_SECTION.MY_OFFICE.HEADLINE"
   productName="My Office"
 ></app-hero-section>
+<div class="banner">
+  {{ "BANNER.MY_OFFICE.TEXT" | translate }}
+</div>
 <div class="feature-cards">
   <div class="feature-card-container">
     <app-feature-card
@@ -11,14 +14,14 @@
     >
       {{ "FEATURE_CARD.ACCOUNTING.DESCRIPTION" | translate }}
     </app-feature-card>
+    <app-feature-card [icon]="iconUpgrade" titleId="FEATURE_CARD.UPGRADE.TITLE">
+      {{ "FEATURE_CARD.UPGRADE.DESCRIPTION" | translate }}
+    </app-feature-card>
     <app-feature-card
       [icon]="iconMarketing"
       titleId="FEATURE_CARD.MARKETING.TITLE"
     >
       {{ "FEATURE_CARD.MARKETING.DESCRIPTION" | translate }}
-    </app-feature-card>
-    <app-feature-card [icon]="iconUpgrade" titleId="FEATURE_CARD.UPGRADE.TITLE">
-      {{ "FEATURE_CARD.UPGRADE.DESCRIPTION" | translate }}
     </app-feature-card>
   </div>
 </div>
@@ -27,12 +30,16 @@
     <app-prev-card
       [imagePaths]="prevCardImagePaths"
       type="primary"
+      sloganId="PREV_CARD.DEFAULT_SLOGAN"
+      titleId="PREV_CARD.DEFAULT_TITLE"
       descriptionId="PREV_CARD.DEFAULT_DESCRIPTION"
       productName="My Office"
     ></app-prev-card>
     <app-prev-card
       [imagePaths]="prevCardImagePaths"
       type="secondary"
+      sloganId="PREV_CARD.DEFAULT_SLOGAN"
+      titleId="PREV_CARD.DEFAULT_TITLE"
       descriptionId="PREV_CARD.DEFAULT_DESCRIPTION"
       productName="My Office"
     ></app-prev-card>

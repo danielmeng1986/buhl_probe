@@ -20,6 +20,8 @@ export type PrevCardType = 'primary' | 'secondary';
 })
 export class PrevCard implements OnInit, OnDestroy {
   imagePaths = input<ResponsiveImagePaths>();
+  sloganId = input<string>('PREV_CARD.DEFAULT_SLOGAN');
+  titleId = input<string>('PREV_CARD.DEFAULT_TITLE');
   descriptionId = input<string>('PREV_CARD.DEFAULT_DESCRIPTION');
   type = input<PrevCardType>('primary');
   productName = input<ProductName>(); // Added: specify which product this card represents
