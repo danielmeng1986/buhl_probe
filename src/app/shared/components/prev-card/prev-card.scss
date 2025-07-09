@@ -4,56 +4,237 @@
 .prev-card {
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  align-items: center;
+  gap: 24px;
+
+  @include respond-to("tablet") {
+    gap: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @include respond-to("desktop") {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+}
+
+.prev-img-container {
+  width: 100%;
+  padding-top: 48px;
+  display: flex;
+  justify-content: center;
+
+  img {
+      width: 192px;
+      height: 138px;
+  }
+
+  @include respond-to("tablet") {
+    flex: 1;
+    align-items: start;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    img {
+        width: 320px;
+        height: 230px;
+      }
+  }
+
+  @include respond-to("desktop") {
+    padding-top: 59px;
+    padding-bottom: 58px;
+    img {
+      width: 496px;
+      height: 357px;
+    }
+  }
 }
 
 .primary {
-  border-bottom: 5px solid $color-light-gray;
-  @include respond-to("desktop") {
+  @include respond-to("tablet") {
     flex-direction: row;
-    margin-left: -45px;
+    align-items: start;
     border-bottom: none;
   }
 }
 
 .secondary {
-  border-top: 5px solid $color-light-gray;
-  @include respond-to("desktop") {
+  @include respond-to("tablet") {
     flex-direction: row-reverse;
-    margin-right: -45px;
+    align-items: start;
     border-top: none;
   }
 }
 
 .prev-content {
-  font-size: 20px;
   color: $color-primary-blue;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
+  gap: 12px;
+  padding-bottom: 35px;
+
+  @include respond-to("tablet") {
+    align-items: start;
+    flex: 1;
+  }
 
   @include respond-to("desktop") {
-    align-items: start;
+    gap: 19px;
+    padding-top: 49px;
+    padding-bottom: 48px;
   }
-  gap: 24px;
 }
 
 .slogan {
   color: $color-primary-orange;
   font-size: 14px;
+  letter-spacing: 0.84px;
+  line-height: 20px;
   text-transform: uppercase;
-  text-align: start;
+  text-align: center;
+  @include respond-to("tablet") {
+    text-align: left;;
+  }
 }
+
+.primary .slogan {
+  @include respond-to("tablet") {
+    padding-left: 20px;
+    padding-right: 0px;
+  }
+  @include respond-to("desktop") {
+    padding-left: 40px;
+    padding-right: 0px;
+  }
+}
+
+.secondary .slogan {
+  @include respond-to("tablet") {
+    padding-left: 0px;
+    padding-right: 20px;
+  }
+
+  @include respond-to("desktop") {
+    padding-left: 0px;
+    padding-right: 40px;
+  }
+}
+
+
 
 .title {
   color: $color-primary-blue;
-  font-size: 32px;
-  text-align: start;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  @include respond-to("tablet") {
+    font-size: 32px;
+    line-height: 43px;
+    text-align: left;;
+  }
+
+  @include respond-to("desktop") {
+    width: 340px;
+  }
+}
+
+.primary .title {
+  @include respond-to("tablet") {
+    padding-left: 20px;
+    padding-right: 0px;
+  }
+  @include respond-to("desktop") {
+    padding-left: 40px;
+    padding-right: 0px;
+  }
+}
+
+.secondary .title {
+  @include respond-to("tablet") {
+    padding-left: 0px;
+    padding-right: 20px;
+  }
+  @include respond-to("desktop") {
+    padding-left: 0px;
+    padding-right: 40px;
+  }
 }
 
 .description {
   color: $color-primary-blue;
   font-size: 16px;
-  text-align: start;
+  line-height: 23px;
+  text-align: center;
+  @include respond-to("tablet") {
+    text-align: left;;
+    letter-spacing: 0.24px;
+    width: 360px;
+  }
+
+  @include respond-to("desktop") {
+    width: 560px;
+  }
+}
+
+
+.primary .description {
+  @include respond-to("tablet") {
+    padding-left: 20px;
+    padding-right: 0px;
+  }
+  @include respond-to("desktop") {
+    padding-left: 40px;
+    padding-right: 0px;
+  }
+}
+
+.secondary .description {
+  @include respond-to("tablet") {
+    padding-left: 0px;
+    padding-right: 20px;
+  }
+  @include respond-to("desktop") {
+    padding-left: 0px;
+    padding-right: 40px;
+  }
+}
+
+
+.prev-button {
+  margin-top: 16px;
+  @include respond-to("desktop") {
+    margin-top: 21px;
+  }
+}
+
+.primary .prev-button {
+  @include respond-to("tablet") {
+    padding-left: 20px;
+    padding-right: 0px;
+  }
+  @include respond-to("desktop") {
+    padding-left: 40px;
+    padding-right: 0px;
+  }
+}
+
+.secondary .prev-button {
+  @include respond-to("tablet") {
+    padding-left: 0px;
+    padding-right: 20px;
+  }
+  @include respond-to("desktop") {
+    padding-left: 0px;
+    padding-right: 40px;
+  }
 }

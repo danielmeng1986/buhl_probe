@@ -36,6 +36,9 @@
   </div>
 </div>
 <div class="prev-cards">
+  @if( breakpointService.isMatching$('mobileOnly') | async) {
+    <div class="h-bar"></div>
+  }
   <div class="prev-card-container">
     <app-prev-card
       [imagePaths]="prevCardImagePaths"
@@ -45,6 +48,11 @@
       descriptionId="PREV_CARD.DEFAULT_DESCRIPTION"
       productName="My Office"
     ></app-prev-card>
+  </div>
+  @if( breakpointService.isMatching$('mobileOnly') | async) {
+    <div class="h-bar"></div>
+  }
+  <div class="prev-card-container">
     <app-prev-card
       [imagePaths]="prevCardImagePaths"
       type="secondary"
