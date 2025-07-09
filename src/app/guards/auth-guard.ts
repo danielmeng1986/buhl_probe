@@ -6,8 +6,7 @@ import { map } from 'rxjs/operators';
 export const authGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthService);
   const dialogService = inject(DialogService);
-  console.log('current route:', route);
-  console.log('current state:', state);
+  console.log('current route:', route, 'state:', state);
   return authService.currentUser$.pipe(
     map((user) => {
       console.log('authGuard: current user:', user);

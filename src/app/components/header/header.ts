@@ -57,33 +57,14 @@ export class Header {
 
   protected targetLink = '/';
 
-  openLoginDialog(): void {
-    this.dialogService.openLoginDialog('');
-  }
-
-  openLogoutDialog(): void {
-    this.dialogService.openLogoutDialog();
-  }
-
-  closeLoginDialog(): void {
-    this.dialogService.closeLoginDialog();
-  }
-
-  closeLogoutDialog(): void {
-    this.dialogService.closeLogoutDialog();
-  }
-
   onLoginSuccess(): void {
-    // Optional: Handle successful login (e.g., show success message)
     console.log('Login successful');
-    // Navigate to customer center if that was the original intent
     if (this.dialogService.loginMessage()) {
       this.router.navigate([this.targetLink]);
     }
   }
 
   onLogoutSuccess(): void {
-    // Optional: Handle successful logout (e.g., show success message)
     console.log('Logout successful');
   }
 

@@ -64,7 +64,7 @@
         </div>
         @if (authService.isAuthenticated()) {
           @if (breakpointService.isMatching$("mobileOnly") | async) {
-            <app-icon-text [icon]="iconLogin" (click)="openLogoutDialog()">{{
+            <app-icon-text [icon]="iconLogin" (click)="dialogService.openLogoutDialog()">{{
               "HEADER.LOGOUT" | translate
             }}</app-icon-text>
           } @else {
@@ -72,13 +72,13 @@
               [icon]="iconButtonLogin"
               bgColor="primary"
               size="medium"
-              (click)="openLogoutDialog()"
+              (click)="dialogService.closeLogoutDialog()"
               >{{ "HEADER.LOGOUT" | translate }}</app-icon-button
             >
           }
         } @else {
           @if (breakpointService.isMatching$("mobileOnly") | async) {
-            <app-icon-text [icon]="iconLogin" (click)="openLoginDialog()">{{
+            <app-icon-text [icon]="iconLogin" (click)="dialogService.openLoginDialog('')">{{
               "HEADER.LOGIN" | translate
             }}</app-icon-text>
           } @else {
@@ -86,7 +86,7 @@
               [icon]="iconButtonLogin"
               bgColor="primary"
               size="medium"
-              (click)="openLoginDialog()"
+              (click)="dialogService.openLoginDialog('')"
               >{{ "HEADER.LOGIN" | translate }}</app-icon-button
             >
           }
@@ -101,7 +101,7 @@
 @if (dialogService.showLoginDialog()) {
   <app-login-dialog
     [message]="dialogService.loginMessage()"
-    (dialogClose)="closeLoginDialog()"
+    (dialogClose)="dialogService.closeLoginDialog()"
     (loginSuccess)="onLoginSuccess()"
   >
   </app-login-dialog>
@@ -110,7 +110,7 @@
 <!-- Logout Dialog -->
 @if (dialogService.showLogoutDialog()) {
   <app-logout-dialog
-    (dialogClose)="closeLogoutDialog()"
+    (dialogClose)="dialogService.closeLogoutDialog()"
     (logoutSuccess)="onLogoutSuccess()"
   >
   </app-logout-dialog>
