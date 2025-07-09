@@ -40,8 +40,8 @@
           }}</app-icon-text>
           <a
             class="base-link"
-            (click)="onCustomerCenterClick($event)"
-            (keydown.enter)="onCustomerCenterClick($event)"
+            routerLink="/customer-center"
+            (click)="onLinkClick('/customer-center')"
             tabindex="0"
             role="button"
           >
@@ -98,9 +98,9 @@
 <app-color-ratio-strip></app-color-ratio-strip>
 
 <!-- Login Dialog -->
-@if (showLoginDialog) {
+@if (dialogService.showLoginDialog()) {
   <app-login-dialog
-    [message]="loginRequiredMessage"
+    [message]="dialogService.loginMessage()"
     (dialogClose)="closeLoginDialog()"
     (loginSuccess)="onLoginSuccess()"
   >
@@ -108,7 +108,7 @@
 }
 
 <!-- Logout Dialog -->
-@if (showLogoutDialog) {
+@if (dialogService.showLogoutDialog()) {
   <app-logout-dialog
     (dialogClose)="closeLogoutDialog()"
     (logoutSuccess)="onLogoutSuccess()"

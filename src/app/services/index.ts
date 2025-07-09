@@ -11,3 +11,4 @@ export { LanguageService } from './language.service';
 export { ProductService } from './product.service';
 export { ShoppingCartService } from './shopping-cart.service';
 export { UserSyncService } from './user-sync.service';
+export { DialogService } from './dialog.service';

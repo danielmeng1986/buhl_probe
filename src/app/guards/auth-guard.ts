@@ -1,11 +1,11 @@
-import { CanActivateFn, Router } from '@angular/router';
+import { CanActivateFn } from '@angular/router';
 import { inject } from '@angular/core';
-import { AuthService } from '../services';
+import { AuthService, DialogService } from '../services';
 import { map } from 'rxjs/operators';
 
 export const authGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthService);
-  const router = inject(Router);
+  const dialogService = inject(DialogService);
   console.log('current route:', route);
   console.log('current state:', state);
   return authService.currentUser$.pipe(
@@ -14,7 +14,8 @@ export const authGuard: CanActivateFn = (route, state) => {
       if (user) {
         return true;
       }
-      return router.createUrlTree(['/']);
+      dialogService.openLoginDialog('AUTH.GUARD.LOGIN_REQUIRED');
+      return false;
     }),
   );
 };

@@ -129,5 +129,6 @@
   "CUSTOMER_CENTER.DOWNLOADS": "Downloads",
   "CUSTOMER_CENTER.DOWNLOADS_DESC": "Laden Sie Ihre Rechnungen und Dokumente herunter",
   "BANNER.MY_OFFICE.TEXT_1": "Das Beste für",
-  "BANNER.MY_OFFICE.TEXT_2": "Sie zusammengestellt"
+  "BANNER.MY_OFFICE.TEXT_2": "Sie zusammengestellt",
+  "AUTH.GUARD.LOGIN_REQUIRED": "Sie müssen angemeldet sein, um auf diese Seite zuzugreifen."
 }

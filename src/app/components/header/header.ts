@@ -18,6 +18,7 @@ import {
   AuthService,
   BreakpointService,
   ShoppingCartService,
+  DialogService,
 } from '../../services';
 import { AsyncPipe } from '@angular/common';
 
@@ -50,58 +51,43 @@ export class Header {
   readonly authService: AuthService = inject(AuthService);
   readonly breakpointService = inject(BreakpointService);
   readonly shoppingCartService = inject(ShoppingCartService);
+  readonly dialogService = inject(DialogService);
   readonly translateService = inject(TranslateService);
   readonly router = inject(Router);
 
-  // Dialog state
-  showLoginDialog = false;
-  showLogoutDialog = false;
-  loginRequiredMessage = '';
-
-  onCustomerCenterClick(event: Event): void {
-    event.preventDefault();
-
-    if (this.authService.isAuthenticated()) {
-      this.router.navigate(['/customer-center']);
-    } else {
-      this.translateService
-        .get('LOGIN.REQUIRED_MESSAGE')
-        .subscribe((message: string) => {
-          this.loginRequiredMessage = message;
-          this.openLoginDialog();
-        });
-    }
-  }
+  protected targetLink = '/';
 
   openLoginDialog(): void {
-    this.showLoginDialog = true;
+    this.dialogService.openLoginDialog('');
   }
 
   openLogoutDialog(): void {
-    this.showLogoutDialog = true;
+    this.dialogService.openLogoutDialog();
   }
 
   closeLoginDialog(): void {
-    this.showLoginDialog = false;
-    this.loginRequiredMessage = '';
+    this.dialogService.closeLoginDialog();
   }
 
   closeLogoutDialog(): void {
-    this.showLogoutDialog = false;
+    this.dialogService.closeLogoutDialog();
   }
 
   onLoginSuccess(): void {
     // Optional: Handle successful login (e.g., show success message)
     console.log('Login successful');
-    this.loginRequiredMessage = '';
     // Navigate to customer center if that was the original intent
-    if (this.loginRequiredMessage) {
-      this.router.navigate(['/customer-center']);
+    if (this.dialogService.loginMessage()) {
+      this.router.navigate([this.targetLink]);
     }
   }
 
   onLogoutSuccess(): void {
     // Optional: Handle successful logout (e.g., show success message)
     console.log('Logout successful');
+  }
+
+  onLinkClick(link: string) {
+    this.targetLink = link;
   }
 }
