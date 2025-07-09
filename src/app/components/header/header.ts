@@ -57,6 +57,10 @@ export class Header {
 
   protected targetLink = '/';
 
+  get cartCount(): number {
+    return this.shoppingCartService.totalQuantity();
+  }
+
   onLoginSuccess(): void {
     console.log('Login successful');
     if (this.dialogService.loginMessage()) {

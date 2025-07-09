@@ -55,9 +55,9 @@
             <app-icon-text [icon]="iconShoppingCart">{{
               "HEADER.SHOPPING_CART" | translate
             }}</app-icon-text>
-            @if (shoppingCartService.totalQuantity() > 0) {
-              <span class="cart-badge">{{
-                shoppingCartService.totalQuantity()
+            @if (cartCount > 0) {
+              <span class="cart-badge" [class.large]="cartCount > 9">{{
+                cartCount
               }}</span>
             }
           </a>

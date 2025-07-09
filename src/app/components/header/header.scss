@@ -111,7 +111,7 @@
   min-width: 20px;
 
   // If number exceeds 9, make the bubble slightly larger
-  &:has-text {
+  &.large {
     min-width: 24px;
     border-radius: 12px;
     padding: 0 4px;
