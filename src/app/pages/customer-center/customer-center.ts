@@ -1,9 +1,10 @@
-import { Component, inject, computed, Signal } from '@angular/core';
+import { Component, inject, computed, Signal, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { AuthService } from '../../services';
 import { User } from '../../models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-center',
@@ -13,6 +14,7 @@ import { User } from '../../models/user.model';
 })
 export class CustomerCenter {
   private readonly authService = inject(AuthService);
+  private readonly router = inject(Router);
 
   user: Signal<User | null> = toSignal(this.authService.currentUser$, {
     initialValue: this.authService.getCurrentUserSync(),
@@ -29,5 +31,13 @@ export class CustomerCenter {
   // Method for backward compatibility
   getFullName(): string {
     return this.fullName();
+  }
+
+  constructor() {
+    effect(() => {
+      if (!this.user()) {
+        this.router.navigate(['/']);
+      }
+    });
   }
 }

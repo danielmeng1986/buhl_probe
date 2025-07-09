@@ -21,7 +21,6 @@
     padding-top: 20px;
     padding-bottom: 20px;
   }
-
 }
 
 .prev-img-container {
@@ -31,8 +30,8 @@
   justify-content: center;
 
   img {
-      width: 192px;
-      height: 138px;
+    width: 192px;
+    height: 138px;
   }
 
   @include respond-to("tablet") {
@@ -43,9 +42,9 @@
     padding-left: 0px;
     padding-right: 0px;
     img {
-        width: 320px;
-        height: 230px;
-      }
+      width: 320px;
+      height: 230px;
+    }
   }
 
   @include respond-to("desktop") {
@@ -103,7 +102,7 @@
   text-transform: uppercase;
   text-align: center;
   @include respond-to("tablet") {
-    text-align: left;;
+    text-align: left;
   }
 }
 
@@ -130,8 +129,6 @@
   }
 }
 
-
-
 .title {
   color: $color-primary-blue;
   font-size: 24px;
@@ -140,7 +137,7 @@
   @include respond-to("tablet") {
     font-size: 32px;
     line-height: 43px;
-    text-align: left;;
+    text-align: left;
   }
 
   @include respond-to("desktop") {
@@ -176,7 +173,7 @@
   line-height: 23px;
   text-align: center;
   @include respond-to("tablet") {
-    text-align: left;;
+    text-align: left;
     letter-spacing: 0.24px;
     width: 360px;
   }
@@ -185,7 +182,6 @@
     width: 560px;
   }
 }
-
 
 .primary .description {
   @include respond-to("tablet") {
@@ -208,7 +204,6 @@
     padding-right: 40px;
   }
 }
-
 
 .prev-button {
   margin-top: 16px;

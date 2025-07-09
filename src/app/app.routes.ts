@@ -6,6 +6,7 @@ import { MyTax } from './pages/my-tax/my-tax';
 import { MyLandlord } from './pages/my-landlord/my-landlord';
 import { ShoppingCart } from './pages/shopping-cart/shopping-cart';
 import { CustomerCenter } from './pages/customer-center/customer-center';
+import { authGuard } from './guards/auth-guard';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -14,6 +15,10 @@ export const routes: Routes = [
   { path: 'my-tax', component: MyTax },
   { path: 'my-landlord', component: MyLandlord },
   { path: 'shopping-cart', component: ShoppingCart },
-  { path: 'customer-center', component: CustomerCenter },
+  {
+    path: 'customer-center',
+    component: CustomerCenter,
+    canActivate: [authGuard],
+  },
   { path: '**', redirectTo: '/' },
 ];

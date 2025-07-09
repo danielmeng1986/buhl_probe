@@ -4,14 +4,14 @@
   productName="My Office"
 ></app-hero-section>
 <div class="banner-container">
-  @if( breakpointService.isMatching$('mobileOnly') | async){
+  @if (breakpointService.isMatching$("mobileOnly") | async) {
     <div class="banner roboto-regular">
-    {{ "BANNER.MY_OFFICE.TEXT_1" | translate }}
-    <br>
-    {{ "BANNER.MY_OFFICE.TEXT_2" | translate }}
+      {{ "BANNER.MY_OFFICE.TEXT_1" | translate }}
+      <br />
+      {{ "BANNER.MY_OFFICE.TEXT_2" | translate }}
     </div>
-  }@else {
-    <div class="banner  roboto-bold">
+  } @else {
+    <div class="banner roboto-bold">
       {{ "BANNER.MY_OFFICE.TEXT" | translate }}
     </div>
   }
@@ -36,7 +36,7 @@
   </div>
 </div>
 <div class="prev-cards">
-  @if( breakpointService.isMatching$('mobileOnly') | async) {
+  @if (breakpointService.isMatching$("mobileOnly") | async) {
     <div class="h-bar"></div>
   }
   <div class="prev-card-container">
@@ -49,7 +49,7 @@
       productName="My Office"
     ></app-prev-card>
   </div>
-  @if( breakpointService.isMatching$('mobileOnly') | async) {
+  @if (breakpointService.isMatching$("mobileOnly") | async) {
     <div class="h-bar"></div>
   }
   <div class="prev-card-container">
