@@ -1,6 +1,6 @@
-@use "../../../styles/colors" as *;
-@use "../../../styles/fonts" as *;
-@use "../../../styles" as *;
+@use "colors" as *;
+@use "fonts" as *;
+@use "globals" as *;
 
 .customer-center {
   min-height: calc(100vh - 160px);

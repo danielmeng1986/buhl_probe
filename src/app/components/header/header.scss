@@ -1,6 +1,6 @@
-@use "../../../styles/fonts" as *;
-@use "../../../styles/colors" as *;
-@use "../../../styles" as *;
+@use "fonts" as *;
+@use "colors" as *;
+@use "globals" as *;
 @use "sass:color";
 
 // Base link styles for reusability
